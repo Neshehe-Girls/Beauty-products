@@ -1,0 +1,1102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wholesale — Neshehe Girls Beauty Products</title>
+    <link rel="icon" type="image/png" href="Neshehe.png">
+    <meta property="og:title" content="Wholesale — Neshehe Girls Beauty Products">
+    <meta property="og:description" content="Premium natural beauty products for hotels, restaurants, spas and retailers. Bulk pricing, custom branding, white label available.">
+    <meta property="og:image" content="https://neshehe-girls.github.io/Beauty-products/Neshehe.png">
+    <meta property="og:url" content="https://neshehe-girls.github.io/Beauty-products/wholesale.html">
+    <meta property="og:type" content="website">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --white: #FFFFFF; --pink: #FF1493; --pink-soft: #FF69B4;
+            --pink-pale: #FFF0F7; --charcoal: #1A1A1A; --gray: #707070;
+            --sage: #7C9A6E; --sage-light: #A8C49A; --sage-pale: #F2F6EF;
+            --terracotta: #C4724A; --cream: #FAF7F2; --gold: #C9A84C;
+            --deep: #0D0D0D; --off-white: #F8F5F0;
+        }
+        body { font-family: 'Jost', sans-serif; background: var(--charcoal); color: var(--white); line-height: 1.7; overflow-x: hidden; }
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+            pointer-events: none; z-index: 9999; opacity: 0.5; animation: grain 8s steps(10) infinite;
+        }
+        @keyframes grain {
+            0%,100%{transform:translate(0,0)} 10%{transform:translate(-5%,-5%)} 20%{transform:translate(-10%,5%)}
+            30%{transform:translate(5%,-10%)} 40%{transform:translate(-5%,15%)} 50%{transform:translate(-10%,5%)}
+            60%{transform:translate(15%,0)} 70%{transform:translate(0,10%)} 80%{transform:translate(-15%,0)} 90%{transform:translate(10%,5%)}
+        }
+
+        /* NAV */
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 1.5rem 5%;
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            background: rgba(26,26,26,0.95); backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(255,20,147,0.15);
+            animation: slideDown 0.8s cubic-bezier(0.4,0,0.2,1);
+        }
+        @keyframes slideDown { from{transform:translateY(-100%);opacity:0} to{transform:translateY(0);opacity:1} }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; letter-spacing: 2px; text-decoration: none; color: var(--white); transition: all 0.3s; }
+        .logo:hover { letter-spacing: 3px; }
+        .nav-menu { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-menu a { text-decoration: none; color: rgba(255,255,255,0.7); font-size: 0.88rem; letter-spacing: 1px; position: relative; transition: color 0.4s; }
+        .nav-menu a::after { content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%) scaleX(0); width: 100%; height: 1px; background: var(--pink); transition: transform 0.4s; }
+        .nav-menu a:hover { color: var(--white); }
+        .nav-menu a:hover::after { transform: translateX(-50%) scaleX(1); }
+        .nav-menu a.active { color: var(--pink); }
+        .nav-cta { padding: 0.8rem 2rem; background: var(--pink); color: var(--white); border: none; font-size: 0.88rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; }
+        .nav-cta:hover { background: var(--pink-soft); transform: translateY(-2px); box-shadow: 0 8px 20px rgba(255,20,147,0.4); }
+
+        /* HERO */
+        .hero {
+            min-height: 100vh; display: flex; align-items: center; justify-content: center;
+            padding: 120px 5% 6rem; position: relative; overflow: hidden;
+            background: linear-gradient(135deg, var(--deep) 0%, #1a0a12 50%, #0d1a0d 100%);
+            text-align: center;
+        }
+        .hero::before {
+            content: ''; position: absolute; top: -30%; left: 50%; transform: translateX(-50%);
+            width: 900px; height: 900px;
+            background: radial-gradient(circle, rgba(255,20,147,0.12) 0%, transparent 65%);
+            animation: heroGlow 12s ease-in-out infinite;
+        }
+        .hero::after {
+            content: ''; position: absolute; bottom: -20%; right: -10%;
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(124,154,110,0.1) 0%, transparent 65%);
+            animation: heroGlow2 16s ease-in-out infinite;
+        }
+        @keyframes heroGlow { 0%,100%{transform:translateX(-50%) scale(1)} 50%{transform:translateX(-50%) scale(1.2)} }
+        @keyframes heroGlow2 { 0%,100%{transform:scale(1)} 50%{transform:scale(1.3) translate(-20px,-20px)} }
+        .hero-inner { position: relative; z-index: 2; max-width: 900px; }
+        .hero-eyebrow {
+            display: inline-flex; align-items: center; gap: 1rem; margin-bottom: 2rem;
+            border: 1px solid rgba(255,20,147,0.3); padding: 0.5rem 1.5rem;
+            animation: fadeIn 1s ease both;
+        }
+        .hero-eyebrow-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--pink); animation: blink 2s ease-in-out infinite; }
+        @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0.3} }
+        .hero-eyebrow span { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; letter-spacing: 4px; text-transform: uppercase; color: var(--pink); }
+        .hero-title {
+            font-family: 'Playfair Display', serif; font-size: clamp(3.5rem, 8vw, 7rem);
+            font-weight: 900; line-height: 1; margin-bottom: 1.5rem;
+            animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1) 0.2s both;
+        }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+        .hero-title span { color: var(--pink); display: block; font-style: italic; }
+        .hero-subtitle {
+            font-family: 'Cormorant Garamond', serif; font-size: 1.4rem; font-style: italic;
+            color: rgba(255,255,255,0.6); margin-bottom: 3rem; font-weight: 300;
+            animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1) 0.4s both;
+        }
+        .hero-stats {
+            display: flex; justify-content: center; gap: 4rem; margin-bottom: 3rem;
+            animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1) 0.6s both;
+        }
+        .hero-stat { text-align: center; }
+        .hero-stat-num { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--pink); line-height: 1; }
+        .hero-stat-label { font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+        .hero-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; animation: fadeInUp 1s cubic-bezier(0.4,0,0.2,1) 0.8s both; }
+        .btn-hero-primary { padding: 1.3rem 3rem; background: var(--pink); color: white; border: none; font-size: 1rem; letter-spacing: 1px; cursor: pointer; transition: all 0.4s; font-family: 'Jost', sans-serif; position: relative; overflow: hidden; }
+        .btn-hero-primary::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255,255,255,0.2); transform: translate(-50%,-50%); transition: width 0.6s, height 0.6s; }
+        .btn-hero-primary:hover::before { width: 400px; height: 400px; }
+        .btn-hero-primary:hover { transform: translateY(-4px); box-shadow: 0 20px 40px rgba(255,20,147,0.4); }
+        .btn-hero-outline { padding: 1.3rem 3rem; background: transparent; color: white; border: 1px solid rgba(255,255,255,0.3); font-size: 1rem; letter-spacing: 1px; cursor: pointer; transition: all 0.4s; font-family: 'Jost', sans-serif; }
+        .btn-hero-outline:hover { border-color: white; background: rgba(255,255,255,0.05); transform: translateY(-4px); }
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+
+        /* CLIENTS MARQUEE */
+        .marquee-strip { background: var(--pink); padding: 1rem 0; overflow: hidden; position: relative; }
+        .marquee-track { display: flex; gap: 3rem; animation: marquee 20s linear infinite; white-space: nowrap; }
+        .marquee-track span { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: white; opacity: 0.9; }
+        .marquee-dot { color: rgba(255,255,255,0.5); }
+        @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+        /* WHO WE SERVE */
+        .serve-section { padding: 8rem 5%; background: var(--off-white); color: var(--charcoal); }
+        .serve-inner { max-width: 1400px; margin: 0 auto; }
+        .section-eyebrow { font-family: 'Cormorant Garamond', serif; font-size: 0.9rem; letter-spacing: 4px; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; display: flex; align-items: center; gap: 1rem; }
+        .section-eyebrow::before { content: ''; width: 40px; height: 1px; background: var(--pink); }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.2rem,4vw,3.8rem); font-weight: 700; margin-bottom: 1rem; line-height: 1.1; }
+        .section-title em { font-style: italic; color: var(--pink); }
+        .section-desc { font-size: 1.05rem; color: var(--gray); max-width: 600px; margin-bottom: 4rem; line-height: 1.9; }
+        .serve-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem; }
+        .serve-card {
+            background: var(--white); padding: 3rem 2.5rem; position: relative; overflow: hidden;
+            border: 1px solid rgba(0,0,0,0.06); transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
+            cursor: default;
+        }
+        .serve-card::before { content: ''; position: absolute; top: 0; left: 0; width: 4px; height: 100%; background: var(--pink); transform: scaleY(0); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); transform-origin: bottom; }
+        .serve-card:hover::before { transform: scaleY(1); }
+        .serve-card:hover { transform: translateY(-10px); box-shadow: 0 30px 60px rgba(255,20,147,0.12); }
+        .serve-icon { font-size: 3rem; margin-bottom: 1.5rem; display: block; transition: transform 0.3s; }
+        .serve-card:hover .serve-icon { transform: scale(1.15) rotate(5deg); }
+        .serve-card-title { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; margin-bottom: 0.8rem; transition: color 0.3s; }
+        .serve-card:hover .serve-card-title { color: var(--pink); }
+        .serve-card-desc { font-size: 0.9rem; color: var(--gray); line-height: 1.8; margin-bottom: 1.5rem; }
+        .serve-card-features { list-style: none; }
+        .serve-card-features li { font-size: 0.85rem; color: var(--charcoal); padding: 0.3rem 0; border-bottom: 1px solid rgba(0,0,0,0.05); display: flex; align-items: center; gap: 0.6rem; }
+        .serve-card-features li::before { content: '✦'; color: var(--pink); font-size: 0.6rem; }
+
+        /* PRICING TIERS */
+        .pricing-section { padding: 8rem 5%; background: var(--charcoal); position: relative; overflow: hidden; }
+        .pricing-section::before { content: ''; position: absolute; top: -20%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(255,20,147,0.07) 0%, transparent 70%); animation: float 14s ease-in-out infinite; }
+        @keyframes float { 0%,100%{transform:translate(0,0)} 50%{transform:translate(-30px,20px)} }
+        .pricing-inner { max-width: 1400px; margin: 0 auto; position: relative; z-index: 1; }
+        .pricing-header { text-align: center; margin-bottom: 5rem; }
+        .pricing-header .section-eyebrow { justify-content: center; }
+        .pricing-header .section-eyebrow::before { display: none; }
+        .pricing-header .section-title { color: var(--white); }
+        .pricing-header .section-desc { color: rgba(255,255,255,0.6); margin: 0 auto 0; }
+        .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .pricing-card {
+            background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08);
+            padding: 3rem; position: relative; transition: all 0.5s cubic-bezier(0.4,0,0.2,1);
+            overflow: hidden;
+        }
+        .pricing-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: var(--pink); transform: scaleX(0); transition: transform 0.4s; }
+        .pricing-card:hover::before { transform: scaleX(1); }
+        .pricing-card:hover { background: rgba(255,255,255,0.07); transform: translateY(-8px); border-color: rgba(255,20,147,0.2); }
+        .pricing-card.featured { background: var(--pink); border-color: var(--pink); }
+        .pricing-card.featured::before { display: none; }
+        .pricing-card.featured:hover { background: #e0117f; transform: translateY(-12px) scale(1.02); box-shadow: 0 40px 80px rgba(255,20,147,0.4); }
+        .featured-badge { position: absolute; top: -1px; right: 2rem; background: var(--gold); color: var(--charcoal); padding: 0.4rem 1.2rem; font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 700; }
+        .pricing-tier { font-size: 0.75rem; letter-spacing: 3px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.8rem; }
+        .pricing-card.featured .pricing-tier { color: rgba(255,255,255,0.8); }
+        .pricing-name { font-family: 'Playfair Display', serif; font-size: 1.8rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .pricing-tagline { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1rem; color: rgba(255,255,255,0.6); margin-bottom: 2rem; }
+        .pricing-card.featured .pricing-tagline { color: rgba(255,255,255,0.85); }
+        .pricing-moq { margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(255,255,255,0.1); }
+        .pricing-card.featured .pricing-moq { border-color: rgba(255,255,255,0.25); }
+        .moq-label { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.3rem; }
+        .pricing-card.featured .moq-label { color: rgba(255,255,255,0.7); }
+        .moq-value { font-family: 'Playfair Display', serif; font-size: 2.5rem; font-weight: 700; color: var(--pink); line-height: 1; }
+        .pricing-card.featured .moq-value { color: white; }
+        .moq-sub { font-size: 0.8rem; color: rgba(255,255,255,0.5); margin-top: 0.3rem; }
+        .pricing-card.featured .moq-sub { color: rgba(255,255,255,0.75); }
+        .pricing-features { list-style: none; margin-bottom: 2.5rem; }
+        .pricing-features li { padding: 0.6rem 0; border-bottom: 1px solid rgba(255,255,255,0.05); font-size: 0.9rem; color: rgba(255,255,255,0.75); display: flex; align-items: center; gap: 0.8rem; }
+        .pricing-card.featured .pricing-features li { color: rgba(255,255,255,0.9); border-color: rgba(255,255,255,0.15); }
+        .pricing-features li .check { color: var(--pink); font-size: 0.8rem; }
+        .pricing-card.featured .pricing-features li .check { color: white; }
+        .pricing-btn { width: 100%; padding: 1.2rem; background: rgba(255,255,255,0.08); color: white; border: 1px solid rgba(255,255,255,0.2); font-size: 0.9rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; }
+        .pricing-btn:hover { background: var(--pink); border-color: var(--pink); transform: translateY(-2px); }
+        .pricing-card.featured .pricing-btn { background: white; color: var(--pink); border-color: white; font-weight: 600; }
+        .pricing-card.featured .pricing-btn:hover { background: var(--charcoal); color: white; border-color: var(--charcoal); }
+
+        /* PRODUCT CATALOGUE */
+        .catalogue-section { padding: 8rem 5%; background: var(--off-white); color: var(--charcoal); }
+        .catalogue-inner { max-width: 1400px; margin: 0 auto; }
+        .catalogue-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 2rem; margin-top: 4rem; }
+        .catalogue-card {
+            background: white; overflow: hidden; border: 1px solid rgba(0,0,0,0.06);
+            transition: all 0.5s cubic-bezier(0.4,0,0.2,1); position: relative;
+        }
+        .catalogue-card:hover { transform: translateY(-12px); box-shadow: 0 30px 60px rgba(255,20,147,0.15); }
+        .catalogue-img { height: 280px; overflow: hidden; background: linear-gradient(135deg, var(--pink-pale), white); display: flex; align-items: center; justify-content: center; position: relative; }
+        .catalogue-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .catalogue-card:hover .catalogue-img img { transform: scale(1.12); }
+        .catalogue-img-placeholder { display: flex; flex-direction: column; align-items: center; gap: 0.8rem; }
+        .catalogue-img-placeholder .ci { font-size: 4rem; }
+        .catalogue-img-placeholder .ct { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); }
+        .catalogue-badge { position: absolute; top: 16px; left: 16px; padding: 0.35rem 1rem; font-size: 0.68rem; letter-spacing: 2px; text-transform: uppercase; font-weight: 600; z-index: 5; }
+        .badge-pink { background: var(--pink); color: white; }
+        .badge-sage { background: var(--sage); color: white; }
+        .badge-gold { background: var(--gold); color: white; }
+        .catalogue-info { padding: 1.8rem; }
+        .catalogue-cat { font-size: 0.72rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 0.5rem; }
+        .catalogue-name { font-family: 'Playfair Display', serif; font-size: 1.4rem; font-weight: 700; margin-bottom: 0.8rem; transition: color 0.3s; }
+        .catalogue-card:hover .catalogue-name { color: var(--pink); }
+        .catalogue-desc { font-size: 0.87rem; color: var(--gray); line-height: 1.8; margin-bottom: 1.2rem; }
+        .catalogue-pricing { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.5rem; margin-bottom: 1.5rem; }
+        .catalogue-price-tier { background: var(--off-white); padding: 0.6rem; text-align: center; transition: background 0.3s; }
+        .catalogue-card:hover .catalogue-price-tier { background: var(--pink-pale); }
+        .cpt-label { font-size: 0.62rem; letter-spacing: 1px; text-transform: uppercase; color: var(--gray); display: block; margin-bottom: 0.2rem; }
+        .cpt-price { font-family: 'Playfair Display', serif; font-size: 1rem; font-weight: 700; color: var(--pink); }
+        .catalogue-btn { width: 100%; padding: 0.9rem; background: var(--charcoal); color: white; border: none; font-size: 0.82rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; }
+        .catalogue-btn:hover { background: var(--pink); transform: translateY(-2px); }
+
+        /* ORDER FORM */
+        .order-section { padding: 8rem 5%; background: var(--deep); position: relative; overflow: hidden; }
+        .order-section::before { content: ''; position: absolute; top: -30%; left: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(255,20,147,0.08) 0%, transparent 65%); animation: float 18s ease-in-out infinite reverse; }
+        .order-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 6rem; align-items: start; position: relative; z-index: 1; }
+        .order-text .section-title { color: var(--white); }
+        .order-text .section-desc { color: rgba(255,255,255,0.6); }
+        .order-why { margin-top: 3rem; display: flex; flex-direction: column; gap: 1.5rem; }
+        .why-item { display: flex; gap: 1.2rem; align-items: flex-start; }
+        .why-icon { width: 44px; height: 44px; background: rgba(255,20,147,0.1); border: 1px solid rgba(255,20,147,0.2); display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; transition: all 0.3s; }
+        .why-item:hover .why-icon { background: var(--pink); border-color: var(--pink); }
+        .why-text h4 { font-size: 0.95rem; font-weight: 600; margin-bottom: 0.3rem; }
+        .why-text p { font-size: 0.85rem; color: rgba(255,255,255,0.5); line-height: 1.7; }
+        .order-form-wrapper { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); padding: 3rem; }
+        .form-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.5rem; }
+        .form-subtitle { font-size: 0.88rem; color: rgba(255,255,255,0.5); margin-bottom: 2rem; }
+        .form-group { margin-bottom: 1.2rem; }
+        .form-label { display: block; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; color: rgba(255,255,255,0.5); margin-bottom: 0.5rem; }
+        .form-input, .form-select, .form-textarea {
+            width: 100%; padding: 1rem 1.2rem; background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1); color: white; font-size: 0.92rem;
+            font-family: 'Jost', sans-serif; transition: all 0.3s; outline: none;
+        }
+        .form-input::placeholder, .form-textarea::placeholder { color: rgba(255,255,255,0.3); }
+        .form-input:focus, .form-select:focus, .form-textarea:focus { border-color: var(--pink); background: rgba(255,20,147,0.05); }
+        .form-select { appearance: none; cursor: pointer; }
+        .form-select option { background: var(--charcoal); color: white; }
+        .form-textarea { resize: vertical; min-height: 120px; }
+        .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+        .form-products { display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem; margin-top: 0.5rem; }
+        .form-product-check { display: flex; align-items: center; gap: 0.6rem; padding: 0.6rem 0.8rem; background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.08); cursor: pointer; transition: all 0.3s; font-size: 0.82rem; }
+        .form-product-check:hover { border-color: rgba(255,20,147,0.3); background: rgba(255,20,147,0.05); }
+        .form-product-check input { accent-color: var(--pink); }
+        .form-submit { width: 100%; padding: 1.3rem; background: var(--pink); color: white; border: none; font-size: 1rem; letter-spacing: 1px; cursor: pointer; transition: all 0.4s; font-family: 'Jost', sans-serif; margin-top: 1rem; position: relative; overflow: hidden; }
+        .form-submit::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255,255,255,0.2); transform: translate(-50%,-50%); transition: width 0.6s, height 0.6s; }
+        .form-submit:hover::before { width: 500px; height: 500px; }
+        .form-submit:hover { transform: translateY(-3px); box-shadow: 0 15px 35px rgba(255,20,147,0.4); }
+
+        /* PAYFAST SECTION */
+        .payment-section { padding: 6rem 5%; background: var(--charcoal); }
+        .payment-inner { max-width: 900px; margin: 0 auto; text-align: center; }
+        .payment-inner .section-title { color: white; margin-bottom: 1rem; }
+        .payment-inner .section-desc { color: rgba(255,255,255,0.6); margin: 0 auto 3rem; }
+        .payment-methods { display: flex; justify-content: center; gap: 1.5rem; flex-wrap: wrap; margin-bottom: 3rem; }
+        .payment-method { padding: 1rem 2rem; background: rgba(255,255,255,0.05); border: 1px solid rgba(255,255,255,0.1); font-size: 0.85rem; color: rgba(255,255,255,0.7); letter-spacing: 1px; display: flex; align-items: center; gap: 0.6rem; transition: all 0.3s; }
+        .payment-method:hover { border-color: rgba(255,20,147,0.4); color: white; }
+        .payment-note { font-size: 0.85rem; color: rgba(255,255,255,0.4); }
+
+        /* TESTIMONIALS */
+        .testimonials { padding: 8rem 5%; background: var(--off-white); color: var(--charcoal); }
+        .testimonials-inner { max-width: 1400px; margin: 0 auto; }
+        .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px,1fr)); gap: 2rem; margin-top: 4rem; }
+        .testimonial-card { background: white; padding: 3rem; border-left: 4px solid var(--pink); position: relative; transition: all 0.5s; }
+        .testimonial-card:hover { transform: translateX(8px); box-shadow: -8px 8px 25px rgba(255,20,147,0.15); border-left-width: 8px; }
+        .quote-mark { font-family: 'Playfair Display', serif; font-size: 6rem; color: var(--pink); opacity: 0.08; position: absolute; top: -10px; left: 20px; line-height: 1; }
+        .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.25rem; line-height: 1.8; margin-bottom: 1.5rem; position: relative; z-index: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 1rem; }
+        .author-avatar { width: 48px; height: 48px; border-radius: 50%; background: linear-gradient(135deg, var(--pink), var(--pink-soft)); display: flex; align-items: center; justify-content: center; color: white; font-weight: 700; font-size: 1rem; }
+        .author-name { font-weight: 600; font-size: 0.92rem; }
+        .author-role { color: var(--gray); font-size: 0.82rem; }
+
+        /* FAQ */
+        .faq-section { padding: 8rem 5%; background: var(--deep); }
+        .faq-inner { max-width: 900px; margin: 0 auto; }
+        .faq-inner .section-title { color: white; text-align: center; }
+        .faq-inner .section-eyebrow { justify-content: center; }
+        .faq-inner .section-eyebrow::before { display: none; }
+        .faq-list { margin-top: 4rem; }
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.08); }
+        .faq-question { padding: 1.5rem 0; display: flex; justify-content: space-between; align-items: center; cursor: pointer; font-size: 1rem; font-weight: 500; color: rgba(255,255,255,0.85); transition: color 0.3s; gap: 1rem; }
+        .faq-question:hover { color: var(--pink); }
+        .faq-toggle { width: 28px; height: 28px; border: 1px solid rgba(255,255,255,0.15); display: flex; align-items: center; justify-content: center; font-size: 1rem; flex-shrink: 0; transition: all 0.3s; color: rgba(255,255,255,0.5); }
+        .faq-item.open .faq-toggle { background: var(--pink); border-color: var(--pink); color: white; transform: rotate(45deg); }
+        .faq-answer { max-height: 0; overflow: hidden; transition: max-height 0.4s ease, padding 0.4s; font-size: 0.92rem; color: rgba(255,255,255,0.55); line-height: 1.9; }
+        .faq-item.open .faq-answer { max-height: 300px; padding-bottom: 1.5rem; }
+
+        /* CTA STRIP */
+        .cta-strip { padding: 6rem 5%; background: var(--pink); text-align: center; position: relative; overflow: hidden; }
+        .cta-strip::before { content: ''; position: absolute; top: -50%; left: -10%; width: 700px; height: 700px; background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 65%); animation: float 12s ease-in-out infinite; }
+        .cta-strip-inner { position: relative; z-index: 1; max-width: 700px; margin: 0 auto; }
+        .cta-strip h2 { font-family: 'Playfair Display', serif; font-size: clamp(2rem, 5vw, 4rem); font-weight: 700; margin-bottom: 1rem; animation: titleFloat 4s ease-in-out infinite; }
+        @keyframes titleFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-8px)} }
+        .cta-strip p { font-size: 1.1rem; opacity: 0.9; margin-bottom: 2rem; }
+        .cta-strip-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+        .btn-white { padding: 1.2rem 3rem; background: white; color: var(--pink); border: none; font-size: 0.95rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; font-weight: 600; }
+        .btn-white:hover { background: var(--charcoal); color: white; transform: translateY(-3px); box-shadow: 0 15px 30px rgba(0,0,0,0.2); }
+        .btn-outline-white { padding: 1.2rem 3rem; background: transparent; color: white; border: 2px solid rgba(255,255,255,0.6); font-size: 0.95rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; }
+        .btn-outline-white:hover { background: rgba(255,255,255,0.1); border-color: white; transform: translateY(-3px); }
+
+        /* PAYMENT MODAL */
+        .payment-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.85); z-index: 3000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; backdrop-filter: blur(10px); }
+        .payment-overlay.open { opacity: 1; pointer-events: all; }
+        .payment-modal { background: var(--charcoal); max-width: 520px; width: 95%; padding: 3rem; position: relative; transform: translateY(40px) scale(0.95); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); max-height: 90vh; overflow-y: auto; border: 1px solid rgba(255,255,255,0.1); }
+        .payment-overlay.open .payment-modal { transform: translateY(0) scale(1); }
+        .payment-close { position: absolute; top: 1rem; right: 1rem; background: var(--pink); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+        .payment-close:hover { transform: rotate(90deg); background: #cc0072; }
+        .payment-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 700; color: white; }
+        .payment-subtitle { color: rgba(255,255,255,0.5); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .order-summary { background: rgba(255,20,147,0.08); padding: 1.5rem; margin-bottom: 1.5rem; border-left: 3px solid var(--pink); }
+        .order-summary h4 { font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.8rem; color: white; }
+        .order-item { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.3rem; color: rgba(255,255,255,0.7); }
+        .order-total { display: flex; justify-content: space-between; font-weight: 700; font-family: 'Playfair Display', serif; font-size: 1.2rem; border-top: 1px solid rgba(255,20,147,0.2); margin-top: 0.8rem; padding-top: 0.8rem; color: white; }
+        .empty-cart-msg { text-align: center; padding: 2rem; color: rgba(255,255,255,0.5); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
+        .pay-btn { width: 100%; padding: 1.3rem; background: var(--pink); color: white; border: none; font-size: 1rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; margin-top: 0.5rem; }
+        .pay-btn:hover { background: #cc0072; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,20,147,0.4); }
+        .secure-badge { text-align: center; margin-top: 1rem; font-size: 0.78rem; color: rgba(255,255,255,0.4); }
+
+        /* TOAST */
+        .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--charcoal); color: white; padding: 1rem 2rem; z-index: 5000; font-size: 0.9rem; transform: translateX(200px); opacity: 0; transition: all 0.4s; border-left: 4px solid var(--pink); border: 1px solid rgba(255,255,255,0.1); border-left: 4px solid var(--pink); }
+        .toast.show { transform: translateX(0); opacity: 1; }
+
+        /* FOOTER */
+        footer { background: var(--deep); color: white; padding: 5rem 5% 3rem; }
+        .footer-grid { max-width: 1400px; margin: 0 auto 4rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; }
+        .footer-brand h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .footer-brand p { opacity: 0.5; line-height: 1.8; font-size: 0.92rem; }
+        .footer-section h4 { font-size: 0.95rem; margin-bottom: 1.5rem; letter-spacing: 1px; }
+        .footer-section ul { list-style: none; }
+        .footer-section li { margin-bottom: 0.8rem; }
+        .footer-section a { color: white; text-decoration: none; opacity: 0.5; transition: all 0.3s; font-size: 0.9rem; display: inline-block; }
+        .footer-section a:hover { opacity: 1; color: var(--pink); transform: translateX(8px); }
+        .footer-bottom { text-align: center; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.06); opacity: 0.35; font-size: 0.82rem; }
+
+        /* ANIMATIONS */
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+
+        /* RESPONSIVE */
+        @media (max-width: 1024px) {
+            .nav-menu { display: none; }
+            .order-inner { grid-template-columns: 1fr; gap: 4rem; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+        }
+        @media (max-width: 768px) {
+            .hero-stats { gap: 2rem; }
+            .pricing-grid { grid-template-columns: 1fr; }
+            .catalogue-grid { grid-template-columns: 1fr; }
+            .form-row { grid-template-columns: 1fr; }
+            .form-products { grid-template-columns: 1fr; }
+            .footer-grid { grid-template-columns: 1fr; }
+            .cta-strip-btns { flex-direction: column; align-items: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="index.html" class="logo">NESHEHE <span style="color:var(--pink)">GIRLS</span></a>
+        <ul class="nav-menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="collection.html">Beauty</a></li>
+            <li><a href="sage-stitch.html">Sage &amp; Stitch</a></li>
+            <li><a href="wholesale.html" class="active">Wholesale</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <button class="nav-cta" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">Get a Quote</button>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+        <div class="hero-inner">
+            <div class="hero-eyebrow">
+                <div class="hero-eyebrow-dot"></div>
+                <span>Trade & Wholesale Programme</span>
+            </div>
+            <h1 class="hero-title">Elevate Your<br><span>Guest Experience</span></h1>
+            <p class="hero-subtitle">Premium natural beauty for South Africa's finest hospitality businesses</p>
+            <div class="hero-stats">
+                <div class="hero-stat"><div class="hero-stat-num">50+</div><div class="hero-stat-label">Trade Partners</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">6</div><div class="hero-stat-label">Product Ranges</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">48hr</div><div class="hero-stat-label">Quote Turnaround</div></div>
+                <div class="hero-stat"><div class="hero-stat-num">100%</div><div class="hero-stat-label">Natural</div></div>
+            </div>
+            <div class="hero-btns">
+                <button class="btn-hero-primary" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">Request a Quote</button>
+                <button class="btn-hero-outline" onclick="document.getElementById('pricing').scrollIntoView({behavior:'smooth'})">View Pricing</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- MARQUEE -->
+    <div class="marquee-strip">
+        <div class="marquee-track">
+            <span>Hotels</span><span class="marquee-dot">✦</span>
+            <span>Guest Houses</span><span class="marquee-dot">✦</span>
+            <span>Spas &amp; Wellness</span><span class="marquee-dot">✦</span>
+            <span>Restaurants</span><span class="marquee-dot">✦</span>
+            <span>Boutique Retailers</span><span class="marquee-dot">✦</span>
+            <span>Event Planners</span><span class="marquee-dot">✦</span>
+            <span>Airbnb Hosts</span><span class="marquee-dot">✦</span>
+            <span>Corporate Gifting</span><span class="marquee-dot">✦</span>
+            <span>Hotels</span><span class="marquee-dot">✦</span>
+            <span>Guest Houses</span><span class="marquee-dot">✦</span>
+            <span>Spas &amp; Wellness</span><span class="marquee-dot">✦</span>
+            <span>Restaurants</span><span class="marquee-dot">✦</span>
+            <span>Boutique Retailers</span><span class="marquee-dot">✦</span>
+            <span>Event Planners</span><span class="marquee-dot">✦</span>
+            <span>Airbnb Hosts</span><span class="marquee-dot">✦</span>
+            <span>Corporate Gifting</span><span class="marquee-dot">✦</span>
+        </div>
+    </div>
+
+    <!-- WHO WE SERVE -->
+    <section class="serve-section">
+        <div class="serve-inner">
+            <div class="fade-in">
+                <div class="section-eyebrow">Who We Serve</div>
+                <h2 class="section-title">Built for <em>Hospitality</em></h2>
+                <p class="section-desc">We supply South Africa's finest establishments with handcrafted natural beauty products that guests actually notice — and remember.</p>
+            </div>
+            <div class="serve-grid">
+                <div class="serve-card fade-in">
+                    <span class="serve-icon">🏨</span>
+                    <h3 class="serve-card-title">Hotels &amp; Lodges</h3>
+                    <p class="serve-card-desc">Elevate your bathroom amenities with luxury natural soaps and bath bombs that guests take photos of. Real ingredients guests can see and feel.</p>
+                    <ul class="serve-card-features">
+                        <li>Bedroom amenity packs</li>
+                        <li>Bathroom soap bars</li>
+                        <li>Luxury bath bomb sets</li>
+                        <li>Custom branding available</li>
+                        <li>Minimum order from 50 units</li>
+                    </ul>
+                </div>
+                <div class="serve-card fade-in">
+                    <span class="serve-icon">🛁</span>
+                    <h3 class="serve-card-title">Spas &amp; Wellness</h3>
+                    <p class="serve-card-desc">Complement your treatments with retail-ready products your clients will love. Natural, premium, and perfectly aligned with a wellness ethos.</p>
+                    <ul class="serve-card-features">
+                        <li>Retail display stock</li>
+                        <li>Treatment room supplies</li>
+                        <li>Gift set packages</li>
+                        <li>Branded packaging options</li>
+                        <li>Minimum order from 30 units</li>
+                    </ul>
+                </div>
+                <div class="serve-card fade-in">
+                    <span class="serve-icon">🍽️</span>
+                    <h3 class="serve-card-title">Restaurants &amp; Cafés</h3>
+                    <p class="serve-card-desc">Luxury soap in your bathrooms tells guests you care about every detail. Small touches that elevate the entire dining experience.</p>
+                    <ul class="serve-card-features">
+                        <li>Bathroom soap dispensing</li>
+                        <li>Artisan bar soap display</li>
+                        <li>Seasonal scent rotations</li>
+                        <li>Refill &amp; replenishment plans</li>
+                        <li>Minimum order from 24 units</li>
+                    </ul>
+                </div>
+                <div class="serve-card fade-in">
+                    <span class="serve-icon">🏡</span>
+                    <h3 class="serve-card-title">Airbnb &amp; Guest Houses</h3>
+                    <p class="serve-card-desc">Stand out in a crowded market. Guests mention beautiful soap in 5-star reviews. Give them something to talk about.</p>
+                    <ul class="serve-card-features">
+                        <li>Starter welcome packs</li>
+                        <li>Per-room supply bundles</li>
+                        <li>Flexible reorder quantities</li>
+                        <li>Photo-worthy presentation</li>
+                        <li>Minimum order from 12 units</li>
+                    </ul>
+                </div>
+                <div class="serve-card fade-in">
+                    <span class="serve-icon">🛍️</span>
+                    <h3 class="serve-card-title">Boutique Retailers</h3>
+                    <p class="serve-card-desc">Stock a product range that's genuinely different. Real visible ingredients set us apart from every mass-produced alternative on the shelf.</p>
+                    <ul class="serve-card-features">
+                        <li>Retail margin pricing</li>
+                        <li>Display stand available</li>
+                        <li>POS marketing materials</li>
+                        <li>Seasonal new products</li>
+                        <li>Minimum order from 60 units</li>
+                    </ul>
+                </div>
+                <div class="serve-card fade-in">
+                    <span class="serve-icon">🎁</span>
+                    <h3 class="serve-card-title">Corporate Gifting</h3>
+                    <p class="serve-card-desc">Impress clients and staff with beautifully curated gift sets. Custom branding, branded boxes, and bulk pricing for corporate orders.</p>
+                    <ul class="serve-card-features">
+                        <li>Custom gift box design</li>
+                        <li>Company logo branding</li>
+                        <li>Personalised messaging</li>
+                        <li>Bulk event gifting</li>
+                        <li>Minimum order from 20 sets</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PRICING TIERS -->
+    <section class="pricing-section" id="pricing">
+        <div class="pricing-inner">
+            <div class="pricing-header fade-in">
+                <div class="section-eyebrow">Wholesale Pricing</div>
+                <h2 class="section-title" style="color:white">Simple, <em style="color:var(--pink)">Transparent</em> Pricing</h2>
+                <p class="section-desc">The more you order, the better the price. All tiers include free delivery within Gauteng.</p>
+            </div>
+            <div class="pricing-grid">
+
+                <div class="pricing-card fade-in">
+                    <div class="pricing-tier">Starter</div>
+                    <div class="pricing-name">Taster Pack</div>
+                    <div class="pricing-tagline">Perfect for Airbnb &amp; small guest houses</div>
+                    <div class="pricing-moq">
+                        <div class="moq-label">Minimum Order</div>
+                        <div class="moq-value">12</div>
+                        <div class="moq-sub">units per order</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✦</span> Artisan soaps from R65/unit</li>
+                        <li><span class="check">✦</span> Bath bombs from R88/unit</li>
+                        <li><span class="check">✦</span> Body lotion from R112/unit</li>
+                        <li><span class="check">✦</span> Mix &amp; match products</li>
+                        <li><span class="check">✦</span> Free delivery over R800</li>
+                        <li><span class="check">✦</span> 48hr quote turnaround</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="openQuoteModal('Taster Pack')">Get a Quote</button>
+                </div>
+
+                <div class="pricing-card featured fade-in">
+                    <div class="featured-badge">Most Popular</div>
+                    <div class="pricing-tier">Growth</div>
+                    <div class="pricing-name">Trade Partner</div>
+                    <div class="pricing-tagline">Ideal for hotels, restaurants &amp; spas</div>
+                    <div class="pricing-moq">
+                        <div class="moq-label">Minimum Order</div>
+                        <div class="moq-value">50</div>
+                        <div class="moq-sub">units per order</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✦</span> Artisan soaps from R55/unit</li>
+                        <li><span class="check">✦</span> Bath bombs from R75/unit</li>
+                        <li><span class="check">✦</span> Body lotion from R95/unit</li>
+                        <li><span class="check">✦</span> Priority fulfilment</li>
+                        <li><span class="check">✦</span> Free delivery always</li>
+                        <li><span class="check">✦</span> Dedicated account manager</li>
+                        <li><span class="check">✦</span> Custom scent options</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="openQuoteModal('Trade Partner')">Get a Quote</button>
+                </div>
+
+                <div class="pricing-card fade-in">
+                    <div class="pricing-tier">Enterprise</div>
+                    <div class="pricing-name">White Label</div>
+                    <div class="pricing-tagline">For retailers &amp; corporate gifting</div>
+                    <div class="pricing-moq">
+                        <div class="moq-label">Minimum Order</div>
+                        <div class="moq-value">150</div>
+                        <div class="moq-sub">units per order</div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><span class="check">✦</span> Artisan soaps from R42/unit</li>
+                        <li><span class="check">✦</span> Bath bombs from R60/unit</li>
+                        <li><span class="check">✦</span> Body lotion from R80/unit</li>
+                        <li><span class="check">✦</span> Custom branding &amp; labels</li>
+                        <li><span class="check">✦</span> Free delivery always</li>
+                        <li><span class="check">✦</span> Bespoke gift packaging</li>
+                        <li><span class="check">✦</span> Custom formulation options</li>
+                    </ul>
+                    <button class="pricing-btn" onclick="openQuoteModal('White Label')">Get a Quote</button>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- PRODUCT CATALOGUE -->
+    <section class="catalogue-section">
+        <div class="catalogue-inner">
+            <div class="fade-in">
+                <div class="section-eyebrow">Product Catalogue</div>
+                <h2 class="section-title">What We <em>Supply</em></h2>
+                <p class="section-desc">All products are handcrafted with real, visible natural ingredients. Available in bulk with tiered wholesale pricing.</p>
+            </div>
+            <div class="catalogue-grid">
+
+                <div class="catalogue-card fade-in">
+                    <div class="catalogue-img">
+                        <span class="catalogue-badge badge-pink">Best Seller</span>
+                        <img src="image1.jpg" alt="Lemon Soap" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="catalogue-img-placeholder" style="display:none"><div class="ci">🍋</div><div class="ct">Natural Lemon Soap</div></div>
+                    </div>
+                    <div class="catalogue-info">
+                        <div class="catalogue-cat">Artisan Bar Soap</div>
+                        <h3 class="catalogue-name">Natural Lemon Soap</h3>
+                        <p class="catalogue-desc">Real lemon pieces you can see and feel. Available in regular and circular shapes. Organic shea butter base.</p>
+                        <div class="catalogue-pricing">
+                            <div class="catalogue-price-tier"><span class="cpt-label">12+ units</span><div class="cpt-price">R65</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">50+ units</span><div class="cpt-price">R55</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">150+ units</span><div class="cpt-price">R42</div></div>
+                        </div>
+                        <button class="catalogue-btn" onclick="addToCart('Natural Lemon Soap (Wholesale)','R65')">Add to Quote</button>
+                    </div>
+                </div>
+
+                <div class="catalogue-card fade-in">
+                    <div class="catalogue-img">
+                        <span class="catalogue-badge badge-pink">Fan Favourite</span>
+                        <img src="image2.jpg" alt="Rose Bath Bomb" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="catalogue-img-placeholder" style="display:none"><div class="ci">🌹</div><div class="ct">Rose Bath Bomb</div></div>
+                    </div>
+                    <div class="catalogue-info">
+                        <div class="catalogue-cat">Luxury Bath Bomb</div>
+                        <h3 class="catalogue-name">Rose Petal Bath Bomb</h3>
+                        <p class="catalogue-desc">Real rose petals released as it dissolves. Guests love watching nature unfold. A guaranteed talking point.</p>
+                        <div class="catalogue-pricing">
+                            <div class="catalogue-price-tier"><span class="cpt-label">12+ units</span><div class="cpt-price">R88</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">50+ units</span><div class="cpt-price">R75</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">150+ units</span><div class="cpt-price">R60</div></div>
+                        </div>
+                        <button class="catalogue-btn" onclick="addToCart('Rose Petal Bath Bomb (Wholesale)','R88')">Add to Quote</button>
+                    </div>
+                </div>
+
+                <div class="catalogue-card fade-in">
+                    <div class="catalogue-img">
+                        <span class="catalogue-badge badge-sage">Natural</span>
+                        <img src="image3.jpg" alt="Wild Berry Soap" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="catalogue-img-placeholder" style="display:none"><div class="ci">🫐</div><div class="ct">Wild Berry Soap</div></div>
+                    </div>
+                    <div class="catalogue-info">
+                        <div class="catalogue-cat">Artisan Bar Soap</div>
+                        <h3 class="catalogue-name">Wild Berry Soap</h3>
+                        <p class="catalogue-desc">Real berry fragments suspended in each bar. Available in regular and circular shapes. Rich in antioxidants.</p>
+                        <div class="catalogue-pricing">
+                            <div class="catalogue-price-tier"><span class="cpt-label">12+ units</span><div class="cpt-price">R65</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">50+ units</span><div class="cpt-price">R55</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">150+ units</span><div class="cpt-price">R42</div></div>
+                        </div>
+                        <button class="catalogue-btn" onclick="addToCart('Wild Berry Soap (Wholesale)','R65')">Add to Quote</button>
+                    </div>
+                </div>
+
+                <div class="catalogue-card fade-in">
+                    <div class="catalogue-img">
+                        <span class="catalogue-badge badge-pink">Signature</span>
+                        <img src="image4.jpg" alt="Rose Petal Soap" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="catalogue-img-placeholder" style="display:none"><div class="ci">🌸</div><div class="ct">Rose Petal Soap</div></div>
+                    </div>
+                    <div class="catalogue-info">
+                        <div class="catalogue-cat">Artisan Bar Soap — Circular</div>
+                        <h3 class="catalogue-name">Rose Petal Soap</h3>
+                        <p class="catalogue-desc">Circular shaped luxury with actual rose petals embedded. Each bar is a work of art. Perfect for hotel bathrooms.</p>
+                        <div class="catalogue-pricing">
+                            <div class="catalogue-price-tier"><span class="cpt-label">12+ units</span><div class="cpt-price">R76</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">50+ units</span><div class="cpt-price">R65</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">150+ units</span><div class="cpt-price">R50</div></div>
+                        </div>
+                        <button class="catalogue-btn" onclick="addToCart('Rose Petal Soap Circular (Wholesale)','R76')">Add to Quote</button>
+                    </div>
+                </div>
+
+                <div class="catalogue-card fade-in">
+                    <div class="catalogue-img">
+                        <span class="catalogue-badge badge-sage">Body Care</span>
+                        <img src="image5.jpg" alt="Body Lotion" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="catalogue-img-placeholder" style="display:none"><div class="ci">🧴</div><div class="ct">Silk Body Lotion</div></div>
+                    </div>
+                    <div class="catalogue-info">
+                        <div class="catalogue-cat">Body Care</div>
+                        <h3 class="catalogue-name">Silk Body Lotion</h3>
+                        <p class="catalogue-desc">Ultra-hydrating formula enriched with vitamin E and almond oil. Pairs perfectly with our soap range for a full guest amenity set.</p>
+                        <div class="catalogue-pricing">
+                            <div class="catalogue-price-tier"><span class="cpt-label">12+ units</span><div class="cpt-price">R112</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">50+ units</span><div class="cpt-price">R95</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">150+ units</span><div class="cpt-price">R80</div></div>
+                        </div>
+                        <button class="catalogue-btn" onclick="addToCart('Silk Body Lotion (Wholesale)','R112')">Add to Quote</button>
+                    </div>
+                </div>
+
+                <div class="catalogue-card fade-in">
+                    <div class="catalogue-img">
+                        <span class="catalogue-badge badge-gold">Popular</span>
+                        <img src="image6.jpg" alt="Shampoo" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+                        <div class="catalogue-img-placeholder" style="display:none"><div class="ci">✨</div><div class="ct">Botanical Shampoo</div></div>
+                    </div>
+                    <div class="catalogue-info">
+                        <div class="catalogue-cat">Hair Care</div>
+                        <h3 class="catalogue-name">Botanical Shampoo</h3>
+                        <p class="catalogue-desc">Professional-grade formula with argan oil and keratin. Natural ingredients for healthy, beautiful hair. Hotel guests love it.</p>
+                        <div class="catalogue-pricing">
+                            <div class="catalogue-price-tier"><span class="cpt-label">12+ units</span><div class="cpt-price">R120</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">50+ units</span><div class="cpt-price">R102</div></div>
+                            <div class="catalogue-price-tier"><span class="cpt-label">150+ units</span><div class="cpt-price">R85</div></div>
+                        </div>
+                        <button class="catalogue-btn" onclick="addToCart('Botanical Shampoo (Wholesale)','R120')">Add to Quote</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ORDER / QUOTE FORM -->
+    <section class="order-section" id="orderForm">
+        <div class="order-inner">
+            <div class="order-text fade-in">
+                <div class="section-eyebrow" style="color:var(--pink)">Get Started</div>
+                <h2 class="section-title" style="color:white">Request a <em style="color:var(--pink)">Quote</em></h2>
+                <p class="section-desc" style="color:rgba(255,255,255,0.6)">Fill in your details and we'll send you a personalised quote within 48 hours. No commitment required.</p>
+                <div class="order-why">
+                    <div class="why-item">
+                        <div class="why-icon">⚡</div>
+                        <div class="why-text"><h4>48hr Quote Turnaround</h4><p>We respond fast. Send your enquiry today and hear back by tomorrow.</p></div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🚚</div>
+                        <div class="why-text"><h4>Free Delivery in Gauteng</h4><p>Free delivery on all orders over R800. Nationwide delivery available.</p></div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🎨</div>
+                        <div class="why-text"><h4>Custom Branding Available</h4><p>We can add your logo and brand colours to packaging for Trade &amp; Enterprise orders.</p></div>
+                    </div>
+                    <div class="why-item">
+                        <div class="why-icon">🔄</div>
+                        <div class="why-text"><h4>Standing Orders Welcome</h4><p>Set up a monthly replenishment order and never run out of stock again.</p></div>
+                    </div>
+                </div>
+            </div>
+            <div class="order-form-wrapper fade-in">
+                <h3 class="form-title">Wholesale Enquiry</h3>
+                <p class="form-subtitle">We'll get back to you within 48 hours.</p>
+                <form id="wholesaleForm" onsubmit="submitWholesaleForm(event)">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Your Name *</label>
+                            <input type="text" class="form-input" placeholder="Jane Smith" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Business Name *</label>
+                            <input type="text" class="form-input" placeholder="The Grand Hotel" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label class="form-label">Email Address *</label>
+                            <input type="email" class="form-input" placeholder="jane@hotel.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label class="form-label">Phone Number</label>
+                            <input type="tel" class="form-input" placeholder="083 000 0000">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Business Type *</label>
+                        <select class="form-select form-input" required>
+                            <option value="" disabled selected>Select your business type</option>
+                            <option>Hotel or Lodge</option>
+                            <option>Guest House</option>
+                            <option>Airbnb Host</option>
+                            <option>Spa or Wellness Centre</option>
+                            <option>Restaurant or Café</option>
+                            <option>Boutique Retailer</option>
+                            <option>Corporate Gifting</option>
+                            <option>Event Planning</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Pricing Tier Interest</label>
+                        <select class="form-select form-input">
+                            <option value="" disabled selected>Select approximate order size</option>
+                            <option>Taster Pack (12+ units)</option>
+                            <option>Trade Partner (50+ units)</option>
+                            <option>White Label (150+ units)</option>
+                            <option>Not sure yet — need advice</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Products You're Interested In</label>
+                        <div class="form-products">
+                            <label class="form-product-check"><input type="checkbox"> Artisan Soaps</label>
+                            <label class="form-product-check"><input type="checkbox"> Bath Bombs</label>
+                            <label class="form-product-check"><input type="checkbox"> Body Lotion</label>
+                            <label class="form-product-check"><input type="checkbox"> Shampoo</label>
+                            <label class="form-product-check"><input type="checkbox"> Sage &amp; Stitch Crochet</label>
+                            <label class="form-product-check"><input type="checkbox"> Custom Gifting</label>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Additional Notes</label>
+                        <textarea class="form-textarea" placeholder="Tell us about your business, how often you'd need to reorder, any custom requirements..."></textarea>
+                    </div>
+                    <button type="submit" class="form-submit">Send Enquiry — We'll Reply Within 48hrs</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- PAYMENT SECTION -->
+    <section class="payment-section">
+        <div class="payment-inner fade-in">
+            <div class="section-eyebrow" style="justify-content:center;color:var(--pink)">Secure Payments</div>
+            <h2 class="section-title" style="color:white;margin-bottom:1rem">Pay Your Invoice <em style="color:var(--pink)">Securely</em></h2>
+            <p class="section-desc">Once we've agreed on your order, pay your invoice safely through PayFast. We accept all major payment methods.</p>
+            <div class="payment-methods">
+                <div class="payment-method">💳 Visa &amp; Mastercard</div>
+                <div class="payment-method">🏦 EFT &amp; Instant EFT</div>
+                <div class="payment-method">📱 SnapScan</div>
+                <div class="payment-method">🔒 SSL Encrypted</div>
+            </div>
+            <button class="btn-hero-primary" onclick="openPayment()" style="margin:0 auto;display:block">Pay Your Invoice</button>
+            <p class="payment-note" style="margin-top:1.5rem">🔒 Powered by PayFast — South Africa's trusted payment gateway</p>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials">
+        <div class="testimonials-inner">
+            <div class="fade-in">
+                <div class="section-eyebrow">Trade Partners</div>
+                <h2 class="section-title">What Our <em>Partners</em> Say</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card fade-in">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">Neshehe Girls has transformed our guest experience. The real lemon pieces and rose petals in the soaps are incredible. Our guests love the visible natural ingredients — we get comments every week.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SC</div>
+                        <div><div class="author-name">Sophia Chen</div><div class="author-role">General Manager, The Maison Hotel</div></div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">We've been a trade partner for two years. The wholesale pricing is excellent and the products genuinely set our bathrooms apart. Our Airbnb reviews mention the soap regularly.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MR</div>
+                        <div><div class="author-name">Marcus Rodriguez</div><div class="author-role">Director, Lumière Restaurant Group</div></div>
+                    </div>
+                </div>
+                <div class="testimonial-card fade-in">
+                    <div class="quote-mark">"</div>
+                    <p class="testimonial-text">The rose petal bath bombs are incredible. Watching the petals release is pure magic — our spa guests are obsessed. The reorder process is simple and delivery is always fast.</p>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">EH</div>
+                        <div><div class="author-name">Eleanor Harper</div><div class="author-role">Owner, The Garden House Inn</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section">
+        <div class="faq-inner">
+            <div class="fade-in">
+                <div class="section-eyebrow" style="color:var(--pink)">FAQ</div>
+                <h2 class="section-title" style="color:white;text-align:center">Common <em style="color:var(--pink)">Questions</em></h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">What is the minimum order quantity? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Our minimum order depends on the tier. Taster Pack starts at 12 units, Trade Partner at 50 units, and White Label at 150 units. We're flexible for first orders — call us to discuss.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Do you offer custom branding or white label? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Yes! Our White Label tier includes custom branding, your logo on packaging, and bespoke gift box design. Available from 150 units. Trade Partners (50+ units) can also get custom label options.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">How long does delivery take? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Standard delivery is 3–5 business days. Gauteng orders are often next day. We also offer express turnaround for urgent orders — contact us to arrange. Free delivery on orders over R800 within Gauteng.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Can I set up a standing monthly order? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Absolutely — standing orders are our favourite. We'll set up a monthly replenishment schedule so you never run out of stock. You'll also get priority delivery and a dedicated account contact.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">What payment methods do you accept for wholesale? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">We accept EFT, credit card via PayFast, Visa, Mastercard, and SnapScan. For standing orders we can also arrange 30-day payment terms for established trade partners.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Can I order a sample before committing? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Yes! We offer a sample pack for R250 (refundable against your first wholesale order) so you can experience the quality firsthand before placing a bulk order. Call us on 083 299 3949 to arrange.</div>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question" onclick="toggleFaq(this)">Do you supply nationwide? <span class="faq-toggle">+</span></div>
+                    <div class="faq-answer">Yes, we ship nationwide across South Africa. Free delivery within Gauteng on orders over R800. Courier costs for other provinces are calculated at checkout based on your location and order size.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="cta-strip">
+        <div class="cta-strip-inner">
+            <h2>Ready to Partner With Us?</h2>
+            <p>Call us now or send an enquiry. We'll have a quote back to you within 48 hours.</p>
+            <div class="cta-strip-btns">
+                <button class="btn-white" onclick="window.location.href='tel:0832993949'">📞 Call 083 299 3949</button>
+                <button class="btn-outline-white" onclick="document.getElementById('orderForm').scrollIntoView({behavior:'smooth'})">Send an Enquiry</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>NESHEHE <span style="color:var(--pink)">GIRLS</span></h3>
+                <p>Premium natural beauty products handcrafted with real, visible ingredients. Serving South Africa's finest hotels, restaurants, spas and retailers.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Wholesale</h4>
+                <ul>
+                    <li><a href="#pricing">Pricing Tiers</a></li>
+                    <li><a href="#orderForm">Request a Quote</a></li>
+                    <li><a href="tel:0832993949">083 299 3949</a></li>
+                    <li><a href="mailto:lesleedalton@gmail.com">lesleedalton@gmail.com</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Products</h4>
+                <ul>
+                    <li><a href="collection.html">Beauty Collection</a></li>
+                    <li><a href="sage-stitch.html">Sage &amp; Stitch</a></li>
+                    <li><a href="collection.html">Artisan Soaps</a></li>
+                    <li><a href="collection.html">Bath Bombs</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Connect</h4>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="https://whatsapp.com/channel/0029Vb7B9141Hspxsf9t9R3G" target="_blank">📢 WhatsApp Channel</a></li>
+                    <li><a href="tel:0832993949">Call Us</a></li>
+                    <li><a href="mailto:lesleedalton@gmail.com">Email Us</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom"><p>© 2026 Neshehe Girls Beauty Products. All rights reserved.</p></div>
+    </footer>
+
+    <!-- PAYMENT MODAL -->
+    <div class="payment-overlay" id="paymentOverlay" onclick="closePaymentEvent(event)">
+        <div class="payment-modal">
+            <button class="payment-close" onclick="closePayment()">✕</button>
+            <h2 class="payment-title">Pay Your Invoice</h2>
+            <p class="payment-subtitle">🔒 Powered by PayFast — 100% secure</p>
+            <div class="order-summary">
+                <h4>Order Summary</h4>
+                <div id="orderItems"></div>
+                <div class="order-total"><span>Total</span><span id="orderTotal">R0</span></div>
+            </div>
+            <div id="emptyCartMsg" class="empty-cart-msg" style="display:none">No items added yet — add products from the catalogue above!</div>
+            <form id="payfastForm" action="https://www.payfast.co.za/eng/process" method="post" style="display:none">
+                <input type="hidden" name="merchant_id" value="13074377">
+                <input type="hidden" name="merchant_key" value="ax7861jmhczsf">
+                <input type="hidden" name="return_url" value="https://neshehe-girls.github.io/Beauty-products/wholesale.html">
+                <input type="hidden" name="cancel_url" value="https://neshehe-girls.github.io/Beauty-products/wholesale.html">
+                <input type="hidden" name="amount" id="pf_amount" value="0">
+                <input type="hidden" name="item_name" id="pf_item_name" value="Neshehe Girls Wholesale Order">
+                <input type="hidden" name="item_description" id="pf_item_desc" value="">
+            </form>
+            <button class="pay-btn" id="payNowBtn" onclick="processPayment()">Pay Now — <span id="payTotal">R0</span></button>
+            <div class="secure-badge">🔒 SSL Encrypted · Visa · Mastercard · EFT · Instant EFT</div>
+        </div>
+    </div>
+
+    <div class="toast" id="toast"></div>
+
+    <script>
+        // ─── CART ─────────────────────────────────────────────────
+        function getCart() {
+            try { return JSON.parse(localStorage.getItem('ng_cart') || '[]'); } catch(e) { return []; }
+        }
+        function saveCart(cart) { localStorage.setItem('ng_cart', JSON.stringify(cart)); }
+        function addToCart(name, price) {
+            var cart = getCart();
+            cart.push({ name: name, price: price });
+            saveCart(cart);
+            showToast('✦ ' + name + ' added to quote!');
+        }
+
+        // ─── TOAST ────────────────────────────────────────────────
+        function showToast(msg) {
+            var t = document.getElementById('toast');
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(function() { t.classList.remove('show'); }, 3000);
+        }
+
+        // ─── PAYMENT MODAL ────────────────────────────────────────
+        function openPayment() {
+            var cart = getCart();
+            var itemsEl = document.getElementById('orderItems');
+            var totalEl = document.getElementById('orderTotal');
+            var payTotalEl = document.getElementById('payTotal');
+            var emptyMsg = document.getElementById('emptyCartMsg');
+            var payBtn = document.getElementById('payNowBtn');
+            var total = 0;
+            if (cart.length === 0) {
+                itemsEl.innerHTML = '';
+                if (emptyMsg) emptyMsg.style.display = 'block';
+                if (payBtn) payBtn.style.display = 'none';
+                if (totalEl) totalEl.textContent = 'R0';
+                if (payTotalEl) payTotalEl.textContent = 'R0';
+            } else {
+                if (emptyMsg) emptyMsg.style.display = 'none';
+                if (payBtn) payBtn.style.display = 'block';
+                itemsEl.innerHTML = cart.map(function(item) {
+                    var num = parseInt((item.price || '').toString().replace(/[^0-9]/g,'')) || 0;
+                    total += num;
+                    return '<div class="order-item"><span>' + item.name + '</span><span>' + item.price + '</span></div>';
+                }).join('');
+                if (totalEl) totalEl.textContent = 'R' + total;
+                if (payTotalEl) payTotalEl.textContent = 'R' + total;
+                var pfAmount = document.getElementById('pf_amount');
+                var pfDesc = document.getElementById('pf_item_desc');
+                if (pfAmount) pfAmount.value = total.toFixed(2);
+                if (pfDesc) pfDesc.value = cart.map(function(i){ return i.name; }).join(', ');
+            }
+            document.getElementById('paymentOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closePayment() {
+            document.getElementById('paymentOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closePaymentEvent(event) {
+            if (event.target === document.getElementById('paymentOverlay')) closePayment();
+        }
+        function processPayment() {
+            var cart = getCart();
+            if (cart.length === 0) { showToast('No items in your quote!'); return; }
+            var form = document.getElementById('payfastForm');
+            if (form) { saveCart([]); form.submit(); }
+        }
+
+        // ─── QUOTE MODAL SHORTCUT ─────────────────────────────────
+        function openQuoteModal(tier) {
+            document.getElementById('orderForm').scrollIntoView({ behavior: 'smooth' });
+            showToast('✦ Scrolled to ' + tier + ' enquiry form');
+        }
+
+        // ─── WHOLESALE FORM ───────────────────────────────────────
+        function submitWholesaleForm(e) {
+            e.preventDefault();
+            var btn = e.target.querySelector('.form-submit');
+            btn.textContent = 'Sending...';
+            setTimeout(function() {
+                btn.textContent = 'Enquiry Sent ✓';
+                btn.style.background = 'var(--sage)';
+                showToast('💌 Enquiry sent! We\'ll be in touch within 48hrs.');
+                setTimeout(function() {
+                    btn.textContent = 'Send Enquiry — We\'ll Reply Within 48hrs';
+                    btn.style.background = '';
+                    e.target.reset();
+                }, 3000);
+            }, 1200);
+        }
+
+        // ─── FAQ TOGGLE ───────────────────────────────────────────
+        function toggleFaq(question) {
+            var item = question.parentElement;
+            var isOpen = item.classList.contains('open');
+            document.querySelectorAll('.faq-item').forEach(function(i) { i.classList.remove('open'); });
+            if (!isOpen) item.classList.add('open');
+        }
+
+        // ─── SCROLL REVEAL ────────────────────────────────────────
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry, i) {
+                if (entry.isIntersecting) {
+                    setTimeout(function() { entry.target.classList.add('visible'); }, i * 80);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -40px 0px' });
+        document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+        setTimeout(function() {
+            document.querySelectorAll('.fade-in:not(.visible)').forEach(function(el, i) {
+                if (el.getBoundingClientRect().top < window.innerHeight) {
+                    setTimeout(function() { el.classList.add('visible'); }, i * 80);
+                }
+            });
+        }, 150);
+    </script>
+</body>
+</html>
