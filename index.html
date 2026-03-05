@@ -1,0 +1,954 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="Neshehe.png">
+    <meta property="og:title" content="Neshehe Girls Beauty Products">
+<meta property="og:description" content="Premium natural beauty products handcrafted with real, visible ingredients.">
+<meta property="og:image" content="https://neshehe-girls.github.io/Beauty-products/Neshehe.png">
+<meta property="og:url" content="https://neshehe-girls.github.io/Beauty-products/">
+<meta property="og:type" content="website">
+    <title>Neshehe Girls Beauty Products — Premium Natural Beauty</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Cormorant+Garamond:wght@300;400;500;600;700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --white: #FFFFFF; --pink: #FF1493; --pink-soft: #FF69B4;
+            --pink-pale: #FFF0F7; --charcoal: #1A1A1A; --gray: #707070;
+            --sage: #7C9A6E; --sage-light: #A8C49A; --sage-pale: #F2F6EF;
+            --terracotta: #C4724A; --cream: #FAF7F2;
+        }
+        body { font-family: 'Jost', sans-serif; background: var(--white); color: var(--charcoal); line-height: 1.7; overflow-x: hidden; }
+        body::before {
+            content: ''; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="4" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)" opacity="0.03"/></svg>');
+            pointer-events: none; z-index: 9999; opacity: 0.4; animation: grain 8s steps(10) infinite;
+        }
+        @keyframes grain {
+            0%,100%{transform:translate(0,0)} 10%{transform:translate(-5%,-5%)} 20%{transform:translate(-10%,5%)}
+            30%{transform:translate(5%,-10%)} 40%{transform:translate(-5%,15%)} 50%{transform:translate(-10%,5%)}
+            60%{transform:translate(15%,0)} 70%{transform:translate(0,10%)} 80%{transform:translate(-15%,0)} 90%{transform:translate(10%,5%)}
+        }
+        nav {
+            position: fixed; top: 0; width: 100%; padding: 2rem 5%;
+            display: flex; justify-content: space-between; align-items: center; z-index: 1000;
+            background: linear-gradient(180deg, var(--white) 0%, rgba(255,255,255,0.95) 70%, transparent 100%);
+            backdrop-filter: blur(10px); animation: slideDown 0.8s cubic-bezier(0.4,0,0.2,1);
+        }
+        @keyframes slideDown { from{transform:translateY(-100%);opacity:0} to{transform:translateY(0);opacity:1} }
+        .logo { font-family: 'Playfair Display', serif; font-size: 1.5rem; font-weight: 700; letter-spacing: 2px; transition: all 0.3s; cursor: pointer; }
+        .logo:hover { transform: scale(1.05); letter-spacing: 3px; }
+        .nav-menu { display: flex; gap: 2.5rem; list-style: none; }
+        .nav-menu a { text-decoration: none; color: var(--charcoal); font-size: 0.95rem; letter-spacing: 1px; position: relative; transition: color 0.4s; }
+        .nav-menu a::after { content: ''; position: absolute; bottom: -5px; left: 50%; transform: translateX(-50%) scaleX(0); width: 100%; height: 1px; background: var(--pink); transition: transform 0.4s cubic-bezier(0.4,0,0.2,1); }
+        .nav-menu a:hover { color: var(--pink); }
+        .nav-menu a:hover::after { transform: translateX(-50%) scaleX(1); }
+        .nav-menu a.sage-link { color: var(--sage); font-weight: 500; }
+        .nav-menu a.sage-link::after { background: var(--sage); }
+        .nav-menu a.sage-link:hover { color: var(--terracotta); }
+        .nav-menu a.sage-link:hover::after { background: var(--terracotta); transform: translateX(-50%) scaleX(1); }
+        .nav-cta { padding: 0.8rem 2rem; background: var(--charcoal); color: var(--white); border: none; font-size: 0.9rem; letter-spacing: 1px; transition: all 0.4s; cursor: pointer; position: relative; overflow: hidden; font-family: 'Jost', sans-serif; }
+        .nav-cta::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: var(--pink); transform: translate(-50%,-50%); transition: width 0.6s, height 0.6s; }
+        .nav-cta:hover::before { width: 300px; height: 300px; }
+        .nav-cta span { position: relative; z-index: 1; }
+        .nav-cta:hover { transform: translateY(-2px); }
+        .cart-icon { position: relative; cursor: pointer; font-size: 1.5rem; transition: all 0.3s; }
+        .cart-icon:hover { transform: scale(1.2) rotate(10deg); }
+        .cart-count { position: absolute; top: -8px; right: -8px; background: var(--pink); color: white; border-radius: 50%; width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 0.7rem; font-weight: 700; }
+        /* PAYMENT MODAL */
+        .payment-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.8); z-index: 3000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.4s; backdrop-filter: blur(8px); }
+        .payment-overlay.open { opacity: 1; pointer-events: all; }
+        .payment-modal { background: white; max-width: 520px; width: 95%; padding: 3rem; position: relative; transform: translateY(40px) scale(0.95); transition: all 0.4s cubic-bezier(0.4,0,0.2,1); max-height: 90vh; overflow-y: auto; }
+        .payment-overlay.open .payment-modal { transform: translateY(0) scale(1); }
+        .payment-close { position: absolute; top: 1rem; right: 1rem; background: var(--pink); color: white; border: none; width: 36px; height: 36px; border-radius: 50%; font-size: 1rem; cursor: pointer; transition: all 0.3s; display: flex; align-items: center; justify-content: center; }
+        .payment-close:hover { transform: rotate(90deg); background: #cc0072; }
+        .payment-title { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 0.5rem; font-weight: 700; }
+        .payment-subtitle { color: var(--gray); font-size: 0.9rem; margin-bottom: 1.5rem; }
+        .order-summary { background: var(--pink-pale); padding: 1.5rem; margin-bottom: 1.5rem; border-left: 3px solid var(--pink); }
+        .order-summary h4 { font-size: 0.82rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 0.8rem; }
+        .order-item { display: flex; justify-content: space-between; font-size: 0.88rem; margin-bottom: 0.3rem; }
+        .order-total { display: flex; justify-content: space-between; font-weight: 700; font-family: 'Playfair Display', serif; font-size: 1.2rem; border-top: 1px solid rgba(255,20,147,0.2); margin-top: 0.8rem; padding-top: 0.8rem; }
+        .empty-cart-msg { text-align: center; padding: 2rem; color: var(--gray); font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; }
+        .pay-btn { width: 100%; padding: 1.3rem; background: var(--pink); color: white; border: none; font-size: 1rem; letter-spacing: 1px; cursor: pointer; transition: all 0.3s; font-family: 'Jost', sans-serif; margin-top: 0.5rem; }
+        .pay-btn:hover { background: #cc0072; transform: translateY(-2px); box-shadow: 0 10px 30px rgba(255,20,147,0.4); }
+        .secure-badge { text-align: center; margin-top: 1rem; font-size: 0.78rem; color: var(--gray); }
+        /* TOAST */
+        .toast { position: fixed; bottom: 2rem; right: 2rem; background: var(--charcoal); color: white; padding: 1rem 2rem; z-index: 5000; font-size: 0.9rem; transform: translateX(200px); opacity: 0; transition: all 0.4s; border-left: 4px solid var(--pink); }
+        .toast.show { transform: translateX(0); opacity: 1; }
+        .hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; position: relative; overflow: hidden; background: linear-gradient(135deg, var(--white) 0%, var(--pink-pale) 100%); padding: 120px 5% 4rem; }
+        .hero::before { content: ''; position: absolute; top: -50%; right: -20%; width: 800px; height: 800px; background: radial-gradient(circle, var(--pink-soft) 0%, transparent 70%); opacity: 0.15; animation: floatBubble1 20s ease-in-out infinite; z-index: 0; }
+        .hero::after { content: ''; position: absolute; bottom: -30%; left: -10%; width: 600px; height: 600px; background: radial-gradient(circle, var(--pink) 0%, transparent 70%); opacity: 0.1; animation: floatBubble2 15s ease-in-out infinite; z-index: 0; }
+        @keyframes floatBubble1 { 0%,100%{transform:translate(0,0) scale(1) rotate(0deg)} 25%{transform:translate(50px,-50px) scale(1.1) rotate(90deg)} 50%{transform:translate(30px,-30px) scale(1.05) rotate(180deg)} 75%{transform:translate(-20px,-40px) scale(0.95) rotate(270deg)} }
+        @keyframes floatBubble2 { 0%,100%{transform:translate(0,0) scale(1) rotate(360deg)} 33%{transform:translate(-40px,30px) scale(1.15) rotate(240deg)} 66%{transform:translate(-60px,-20px) scale(0.9) rotate(120deg)} }
+        .hero-logo-wrapper { position: relative; z-index: 10; margin-bottom: 2rem; animation: fadeInDown 1.5s cubic-bezier(0.4,0,0.2,1); }
+        @keyframes fadeInDown { from{opacity:0;transform:translateY(-50px) scale(0.8)} to{opacity:1;transform:translateY(0) scale(1)} }
+        .hero-logo { max-width: 600px; width: 100%; height: auto; filter: drop-shadow(0 10px 30px rgba(255,20,147,0.2)); animation: floatLogo 6s ease-in-out infinite, glow 3s ease-in-out infinite; }
+        @keyframes floatLogo { 0%,100%{transform:translateY(0px) rotate(0deg)} 33%{transform:translateY(-20px) rotate(2deg)} 66%{transform:translateY(-10px) rotate(-2deg)} }
+        @keyframes glow { 0%,100%{filter:drop-shadow(0 10px 30px rgba(255,20,147,0.2))} 50%{filter:drop-shadow(0 15px 40px rgba(255,20,147,0.4))} }
+        .hero-content { text-align: center; max-width: 1000px; z-index: 10; animation: fadeInUp 1.2s cubic-bezier(0.4,0,0.2,1); }
+        @keyframes fadeInUp { from{opacity:0;transform:translateY(40px)} to{opacity:1;transform:translateY(0)} }
+        .hero-subtitle { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--pink); margin-bottom: 1.5rem; font-weight: 500; animation: fadeIn 1.5s ease-in 0.3s both; }
+        @keyframes fadeIn { from{opacity:0} to{opacity:1} }
+        .hero-title { font-family: 'Playfair Display', serif; font-size: clamp(3rem,8vw,6rem); font-weight: 700; line-height: 1.1; margin-bottom: 2rem; animation: slideInScale 1s ease-out 0.5s both; }
+        @keyframes slideInScale { from{opacity:0;transform:translateY(30px) scale(0.9)} to{opacity:1;transform:translateY(0) scale(1)} }
+        .hero-description { font-size: 1.2rem; color: var(--gray); max-width: 700px; margin: 0 auto 3rem; font-weight: 300; animation: fadeIn 1.2s ease-in 0.8s both; }
+        .hero-buttons { display: flex; gap: 1.5rem; justify-content: center; flex-wrap: wrap; animation: fadeIn 1s ease-in 1s both; }
+        .btn { padding: 1.2rem 3rem; font-size: 1rem; letter-spacing: 1px; border: none; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); cursor: pointer; position: relative; overflow: hidden; font-family: 'Jost', sans-serif; }
+        .btn::after { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: rgba(255,255,255,0.3); transform: translate(-50%,-50%); transition: width 0.6s, height 0.6s; }
+        .btn:hover::after { width: 400px; height: 400px; }
+        .btn-primary { background: var(--pink); color: var(--white); }
+        .btn-primary:hover { transform: translateY(-5px) scale(1.05); box-shadow: 0 20px 40px rgba(255,20,147,0.4); }
+        .btn-secondary { background: transparent; color: var(--charcoal); border: 2px solid var(--charcoal); }
+        .btn-secondary:hover { background: var(--charcoal); color: var(--white); transform: translateY(-5px) scale(1.05); }
+        .btn-sage-hero { background: var(--sage); color: var(--white); border: 2px solid var(--sage); }
+        .btn-sage-hero:hover { background: var(--terracotta); border-color: var(--terracotta); transform: translateY(-5px) scale(1.05); box-shadow: 0 20px 40px rgba(124,154,110,0.4); }
+        .featured { padding: 8rem 5%; background: var(--white); }
+        .section-header { text-align: center; margin-bottom: 5rem; }
+        .section-label { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 3px; text-transform: uppercase; color: var(--pink); margin-bottom: 1rem; }
+        .section-title { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem,5vw,4rem); font-weight: 700; }
+        .products-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(350px,1fr)); gap: 3rem; max-width: 1400px; margin: 0 auto; }
+        .product-card { background: var(--white); overflow: hidden; transition: all 0.5s cubic-bezier(0.4,0,0.2,1); border: 1px solid rgba(0,0,0,0.05); position: relative; }
+        .product-card::before { content: ''; position: absolute; top: -2px; left: -2px; right: -2px; bottom: -2px; background: linear-gradient(45deg,var(--pink),var(--pink-soft),var(--pink)); opacity: 0; z-index: -1; transition: opacity 0.5s; background-size: 400%; animation: gradient-shift 3s ease infinite; }
+        @keyframes gradient-shift { 0%,100%{background-position:0% 50%} 50%{background-position:100% 50%} }
+        .product-card:hover::before { opacity: 0.7; }
+        .product-card:hover { transform: translateY(-15px) scale(1.02); box-shadow: 0 30px 60px rgba(255,20,147,0.15); }
+        .product-image-wrapper { position: relative; height: 450px; overflow: hidden; background: linear-gradient(135deg,var(--pink-pale) 0%,var(--white) 100%); display: flex; align-items: center; justify-content: center; }
+        .product-image-wrapper::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.4),transparent); transition: left 0.7s; }
+        .product-card:hover .product-image-wrapper::after { left: 100%; }
+        .product-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: all 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .product-card:hover .product-image-wrapper img { transform: scale(1.15) rotate(2deg); filter: brightness(1.1); }
+        .product-badge { position: absolute; top: 20px; right: 20px; background: var(--pink); color: var(--white); padding: 0.5rem 1.5rem; font-size: 0.75rem; letter-spacing: 2px; text-transform: uppercase; z-index: 5; animation: pulse 2s ease-in-out infinite; }
+        @keyframes pulse { 0%,100%{transform:scale(1)} 50%{transform:scale(1.05)} }
+        .product-info { padding: 2.5rem; }
+        .product-category { font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gray); margin-bottom: 0.8rem; transition: color 0.3s; }
+        .product-card:hover .product-category { color: var(--pink); }
+        .product-name { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; margin-bottom: 1rem; transition: all 0.3s; }
+        .product-card:hover .product-name { color: var(--pink); transform: translateX(5px); }
+        .product-description { font-size: 0.95rem; color: var(--gray); margin-bottom: 2rem; line-height: 1.8; }
+        .product-footer { display: flex; justify-content: space-between; align-items: center; }
+        .product-price { font-family: 'Playfair Display', serif; font-size: 2rem; font-weight: 600; color: var(--pink); animation: priceGlow 2s ease-in-out infinite; }
+        @keyframes priceGlow { 0%,100%{text-shadow:0 0 10px rgba(255,20,147,0.3)} 50%{text-shadow:0 0 20px rgba(255,20,147,0.6)} }
+        .product-price-label { font-size: 0.75rem; color: var(--gray); display: block; margin-bottom: 0.25rem; }
+        .add-cart { padding: 0.9rem 2rem; background: var(--charcoal); color: var(--white); border: none; font-size: 0.85rem; letter-spacing: 1px; transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden; font-family: 'Jost', sans-serif; }
+        .add-cart::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(255,20,147,0.5),transparent); transition: left 0.5s; }
+        .add-cart:hover::before { left: 100%; }
+        .add-cart:hover { background: var(--pink); transform: translateX(5px) scale(1.05); box-shadow: 0 5px 15px rgba(255,20,147,0.3); }
+
+        /* ═══ SAGE & STITCH TEASER ═══ */
+        .sage-teaser { padding: 8rem 5%; background: var(--cream); position: relative; overflow: hidden; }
+        .sage-teaser::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%237C9A6E' fill-opacity='0.07'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/svg%3E"); }
+        .sage-teaser::after { content: ''; position: absolute; top: -30%; right: -10%; width: 600px; height: 600px; background: radial-gradient(circle, rgba(124,154,110,0.12) 0%, transparent 70%); animation: sageFloat 14s ease-in-out infinite; pointer-events: none; }
+        @keyframes sageFloat { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-30px,20px) scale(1.08)} }
+        .sage-teaser-inner { max-width: 1400px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 7rem; align-items: center; position: relative; z-index: 1; }
+        .sage-new-badge { display: inline-flex; align-items: center; gap: 0.5rem; background: var(--sage); color: white; padding: 0.45rem 1.3rem; font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; margin-bottom: 1.8rem; animation: pulse 3s ease-in-out infinite; }
+        .sage-teaser-label { font-family: 'Cormorant Garamond', serif; font-size: 1rem; letter-spacing: 4px; text-transform: uppercase; color: var(--terracotta); margin-bottom: 1rem; }
+        .sage-teaser-title { font-family: 'Playfair Display', serif; font-size: clamp(2.8rem,4vw,4.2rem); font-weight: 700; line-height: 1.1; margin-bottom: 1.5rem; color: var(--charcoal); }
+        .sage-teaser-title em { font-style: italic; color: var(--sage); }
+        .sage-teaser-desc { font-size: 1.05rem; color: var(--gray); line-height: 1.95; margin-bottom: 2.5rem; max-width: 500px; }
+        .sage-feature-list { list-style: none; margin-bottom: 2.8rem; display: flex; flex-direction: column; gap: 0.7rem; }
+        .sage-feature-list li { display: flex; align-items: center; gap: 0.8rem; font-size: 0.95rem; color: var(--charcoal); }
+        .sage-feature-list li::before { content: '✦'; color: var(--sage); font-size: 0.7rem; }
+        .btn-sage { display: inline-block; padding: 1.2rem 3rem; background: var(--sage); color: var(--white); border: none; font-size: 0.95rem; letter-spacing: 1px; cursor: pointer; text-decoration: none; transition: all 0.4s cubic-bezier(0.4,0,0.2,1); position: relative; overflow: hidden; font-family: 'Jost', sans-serif; }
+        .btn-sage::before { content: ''; position: absolute; top: 50%; left: 50%; width: 0; height: 0; border-radius: 50%; background: var(--terracotta); transform: translate(-50%,-50%); transition: width 0.6s, height 0.6s; }
+        .btn-sage:hover::before { width: 400px; height: 400px; }
+        .btn-sage span { position: relative; z-index: 1; }
+        .btn-sage:hover { transform: translateY(-4px); box-shadow: 0 15px 35px rgba(124,154,110,0.4); }
+        .sage-visual { position: relative; }
+        .sage-visual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
+        .sage-visual-card { background: var(--sage-pale); overflow: hidden; position: relative; transition: all 0.5s cubic-bezier(0.4,0,0.2,1); }
+        .sage-visual-card:nth-child(odd) { margin-top: 2.5rem; }
+        .sage-visual-card:hover { transform: translateY(-10px); box-shadow: 0 25px 50px rgba(124,154,110,0.25); }
+        .sage-visual-img { aspect-ratio: 3/4; overflow: hidden; position: relative; }
+        .sage-visual-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s cubic-bezier(0.4,0,0.2,1); }
+        .sage-visual-card:hover .sage-visual-img img { transform: scale(1.1); }
+        .sage-placeholder { width: 100%; height: 100%; min-height: 280px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 0.8rem; background: linear-gradient(135deg, var(--sage-pale), #e8f0e4); }
+        .sage-placeholder-icon { font-size: 3rem; }
+        .sage-placeholder-text { font-family: 'Cormorant Garamond', serif; font-size: 0.85rem; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); }
+        .sage-card-label { padding: 1rem 1.2rem; background: white; }
+        .sage-card-label-cat { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--sage); margin-bottom: 0.2rem; }
+        .sage-card-label-name { font-family: 'Playfair Display', serif; font-size: 1.1rem; font-weight: 600; color: var(--charcoal); }
+
+        .testimonials { padding: 8rem 5%; background: var(--pink-pale); position: relative; }
+        .testimonials::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: radial-gradient(circle at 20% 50%, rgba(255,20,147,0.1) 0%, transparent 50%); animation: pulseBackground 10s ease-in-out infinite; }
+        @keyframes pulseBackground { 0%,100%{opacity:0.5} 50%{opacity:1} }
+        .testimonials-wrapper { max-width: 1200px; margin: 0 auto; position: relative; z-index: 1; }
+        .testimonial-card { background: var(--white); padding: 4rem; margin-bottom: 2rem; border-left: 4px solid var(--pink); position: relative; transition: all 0.5s; }
+        .testimonial-card:hover { transform: translateX(10px); box-shadow: -10px 10px 30px rgba(255,20,147,0.2); border-left-width: 8px; }
+        .quote-mark { font-family: 'Playfair Display', serif; font-size: 8rem; color: var(--pink); opacity: 0.1; position: absolute; top: -20px; left: 30px; line-height: 1; transition: all 0.5s; }
+        .testimonial-card:hover .quote-mark { opacity: 0.2; transform: scale(1.1); }
+        .testimonial-text { font-family: 'Cormorant Garamond', serif; font-size: 1.5rem; line-height: 1.8; margin-bottom: 2rem; position: relative; z-index: 1; }
+        .testimonial-author { display: flex; align-items: center; gap: 1.5rem; }
+        .author-image { width: 60px; height: 60px; border-radius: 50%; background: linear-gradient(135deg,var(--pink),var(--pink-soft)); display: flex; align-items: center; justify-content: center; color: var(--white); font-weight: 600; font-size: 1.5rem; transition: all 0.5s; animation: rotate 10s linear infinite; }
+        @keyframes rotate { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+        .testimonial-card:hover .author-image { transform: scale(1.2); box-shadow: 0 10px 25px rgba(255,20,147,0.4); }
+        .author-details h4 { font-size: 1.1rem; margin-bottom: 0.25rem; }
+        .author-details p { color: var(--gray); font-size: 0.9rem; }
+        .cta { padding: 10rem 5%; background: var(--charcoal); color: var(--white); text-align: center; position: relative; overflow: hidden; }
+        .cta::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: linear-gradient(135deg,transparent 0%,rgba(255,20,147,0.1) 100%); animation: gradientMove 8s ease infinite; }
+        @keyframes gradientMove { 0%,100%{opacity:0.5} 50%{opacity:1} }
+        .cta-content { position: relative; z-index: 1; max-width: 800px; margin: 0 auto; }
+        .cta h2 { font-family: 'Playfair Display', serif; font-size: clamp(2.5rem,5vw,4.5rem); margin-bottom: 1.5rem; font-weight: 700; animation: titleFloat 4s ease-in-out infinite; }
+        @keyframes titleFloat { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
+        .cta p { font-size: 1.2rem; margin-bottom: 3rem; opacity: 0.9; }
+        .cta-form { display: flex; max-width: 600px; margin: 0 auto; gap: 1rem; }
+        .cta-input { flex: 1; padding: 1.5rem 2rem; border: 2px solid rgba(255,255,255,0.2); background: rgba(255,255,255,0.05); color: var(--white); font-size: 1rem; backdrop-filter: blur(10px); transition: all 0.3s; }
+        .cta-input::placeholder { color: rgba(255,255,255,0.5); }
+        .cta-input:focus { outline: none; border-color: var(--pink); background: rgba(255,255,255,0.1); transform: scale(1.02); }
+        .cta-submit { padding: 1.5rem 3rem; background: var(--pink); color: var(--white); border: none; font-size: 1rem; letter-spacing: 1px; transition: all 0.3s; cursor: pointer; position: relative; overflow: hidden; font-family: 'Jost', sans-serif; }
+        .cta-submit::before { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg,transparent,rgba(255,255,255,0.3),transparent); transition: left 0.5s; }
+        .cta-submit:hover::before { left: 100%; }
+        .cta-submit:hover { background: var(--pink-soft); transform: translateY(-3px) scale(1.05); box-shadow: 0 10px 30px rgba(255,20,147,0.5); }
+        footer { background: var(--charcoal); color: var(--white); padding: 5rem 5% 3rem; }
+        .footer-grid { max-width: 1400px; margin: 0 auto 4rem; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 4rem; }
+        .footer-brand h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; letter-spacing: 2px; }
+        .footer-brand p { opacity: 0.7; line-height: 1.8; }
+        .footer-section h4 { font-size: 1.1rem; margin-bottom: 1.5rem; letter-spacing: 1px; }
+        .footer-section ul { list-style: none; }
+        .footer-section li { margin-bottom: 0.8rem; }
+        .footer-section a { color: var(--white); text-decoration: none; opacity: 0.7; transition: all 0.3s; font-size: 0.95rem; display: inline-block; }
+        .footer-section a:hover { opacity: 1; color: var(--pink); transform: translateX(10px); }
+        .footer-section a.sage-footer:hover { color: var(--sage-light); }
+        .footer-bottom { text-align: center; padding-top: 3rem; border-top: 1px solid rgba(255,255,255,0.1); opacity: 0.5; font-size: 0.9rem; }
+        .fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s cubic-bezier(0.4,0,0.2,1); }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        @media (max-width: 1024px) {
+            .nav-menu { display: none; }
+            .footer-grid { grid-template-columns: 1fr 1fr; gap: 3rem; }
+            .sage-teaser-inner { grid-template-columns: 1fr; gap: 4rem; }
+        }
+        @media (max-width: 768px) {
+            .hero-buttons { flex-direction: column; align-items: center; }
+            .products-grid { grid-template-columns: 1fr; }
+            .cta-form { flex-direction: column; }
+            .footer-grid { grid-template-columns: 1fr; }
+        }
+        /* Make product description text slightly thinner */
+        .product-description { font-weight: 400; }
+        
+        /* Ensure pack8.jpg displays in full portrait */
+        img[src="pack8.jpg"] {
+            object-fit: contain !important;
+            width: 100% !important;
+            height: auto !important;
+        }
+        
+        /* Sold out badge styling */
+        .sold-out-badge {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-15deg);
+            background: rgba(0, 0, 0, 0.85);
+            color: white;
+            padding: 1.5rem 3rem;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            z-index: 10;
+            border: 4px solid white;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .sold-out-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.7);
+            z-index: 9;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">NESHEHE <span style="color:var(--pink)">GIRLS</span></div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="collection.html">Beauty</a></li>
+            <li><a href="sage-stitch.html" class="sage-link">🧶 Sage &amp; Stitch</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div style="display:flex;align-items:center;gap:1.5rem">
+            <div class="cart-icon" onclick="openPayment()">🛍️ <span class="cart-count" id="cartCount">0</span></div>
+            <button class="nav-cta" onclick="openPayment()"><span>Checkout</span></button>
+        </div>
+    </nav>
+
+    <section class="hero" id="home">
+        <div class="hero-logo-wrapper">
+            <img src="Neshehe.png" alt="Neshehe Girls Beauty Products" class="hero-logo">
+        </div>
+        <div class="hero-content">
+            <div class="hero-subtitle">Premium Natural Beauty Solutions</div>
+            <h1 class="hero-title">Nature's Beauty<br>In Every Bar</h1>
+            <p class="hero-description">Handcrafted beauty products with real, visible natural ingredients. Lemon pieces, rose petals, and berry fragments you can see and feel.</p>
+            <div class="hero-buttons">
+                <button class="btn btn-primary" onclick="window.location.href='collection.html'">Explore Beauty</button>
+                <button class="btn btn-sage-hero" onclick="window.location.href='sage-stitch.html'">🧶 Sage &amp; Stitch</button>
+                <button class="btn btn-secondary" onclick="window.location.href='wholesale.html'">Wholesale Pricing</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured" id="products">
+        <div class="section-header fade-in">
+            <div class="section-label">Our Signature Collection</div>
+            <h2 class="section-title">Real Ingredients, Real Beauty</h2>
+        </div>
+        <div class="products-grid">
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Best Seller</div>
+                    <img src="image1.jpg" alt="Natural Lemon Soap">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Artisan Bar Soap</div>
+                    <h3 class="product-name">Natural Lemon Soap</h3>
+                    <p class="product-description">Handcrafted in regular and circular shapes with real, visible lemon pieces. Made with organic shea butter and fresh citrus.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R85</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Real Rose Petals</div>
+                    <img src="image2.jpg" alt="Rose Bath Bomb">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Luxury Bath Bomb</div>
+                    <h3 class="product-name">Rose Petal Bath Bomb</h3>
+                    <p class="product-description">As it dissolves to the center, real rose petals are released into your bath water. Watch nature unfold as fragrant petals float.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R110</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="image3.jpg" alt="Berry Soap">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Artisan Bar Soap</div>
+                    <h3 class="product-name">Wild Berry Soap</h3>
+                    <p class="product-description">Available in regular and circular shapes. Real berry fragments suspended in each bar. Natural antioxidants meet luxury.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R85</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Signature</div>
+                    <img src="image4.jpg" alt="Rose Petal Soap">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Artisan Bar Soap - Circular</div>
+                    <h3 class="product-name">Rose Petal Soap</h3>
+                    <p class="product-description">Circular shaped luxury with actual rose petals you can see. Each bar is a work of art featuring real flower fragments.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R95</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="image5.jpg" alt="Body Lotion">
+                    <div class="sold-out-overlay"></div>
+                    <div class="sold-out-badge">SOLD OUT</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Body Care</div>
+                    <h3 class="product-name">Silk Body Lotion</h3>
+                    <p class="product-description">Ultra-hydrating formula enriched with vitamin E and almond oil. Natural ingredients that complement our soap collection.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R140</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="image6.jpg" alt="Shampoo">
+                    <div class="sold-out-overlay"></div>
+                    <div class="sold-out-badge">SOLD OUT</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Hair Care</div>
+                    <h3 class="product-name">Botanical Shampoo</h3>
+                    <p class="product-description">Professional-grade formula with argan oil and keratin. Natural ingredients for healthy, beautiful hair.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R150</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">New</div>
+                    <img src="bath-bomb.png" alt="Wild Berry Bath Bomb">
+                    <div class="sold-out-overlay"></div>
+                    <div class="sold-out-badge">SOLD OUT</div>
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Luxury Bath Bomb</div>
+                    <h3 class="product-name">Wild Berry Bath Bomb</h3>
+                    <p class="product-description">Ball-shaped wild berry bath bomb. Fizzes beautifully and releases a sweet, antioxidant-rich aroma. Perfect for a relaxing soak.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R110</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="bath-salt500ml.png" alt="Himalayan Bath Salts">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Bath Therapy — 500ml</div>
+                    <h3 class="product-name">Himalayan Bath Salts</h3>
+                    <p class="product-description">Pure Himalayan pink salt in a 500ml jar. Mineral-rich and deeply soothing. Guests love it for muscle relief and relaxation.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R120</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="bath-scrub.png" alt="Rose Petal Bath Scrub">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Bath & Body Scrub</div>
+                    <h3 class="product-name">Rose Petal Bath Scrub</h3>
+                    <p class="product-description">Natural bath scrub with real rose petals. Gentle exfoliation meets luxury. Leaves skin smooth and radiant.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R135</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="berry-scrub.png" alt="Wild Berry Scrub">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Body Scrub</div>
+                    <h3 class="product-name">Wild Berry Scrub</h3>
+                    <p class="product-description">Wild berry body scrub for renewal and nourishment. Rich in antioxidants. Exfoliates gently while leaving skin soft and revitalized.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R135</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="facial-scrub.png" alt="Facial Scrub">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Facial Care</div>
+                    <h3 class="product-name">Daily Revitalizing Facial Scrub</h3>
+                    <p class="product-description">Gentle daily facial scrub that revitalizes and refreshes. Perfect for morning routines. Leaves skin clean, smooth, and glowing.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R125</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Collection Set</div>
+                    <img src="collection.png" alt="5 Product Collection">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Gift Set</div>
+                    <h3 class="product-name">5 Product Collection</h3>
+                    <p class="product-description">A curated set of 5 bestselling products. Perfect as a welcome amenity or gift set. Beautifully presented and ready to impress.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R495</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="lipgloss.png" alt="Lip Gloss">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Lip Care</div>
+                    <h3 class="product-name">Nourishing Lip Gloss</h3>
+                    <p class="product-description">Natural lip gloss with a smooth, glossy finish. Enriched with nourishing oils. Keeps lips soft, hydrated, and radiant all day.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R70</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Signature Duo</div>
+                    <img src="soap.png" alt="Artisan Soap Duo">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Artisan Bar Soap — Pack of 2</div>
+                    <h3 class="product-name">Artisan Soap Duo</h3>
+                    <p class="product-description">Rose petal soap and lemon zest soap sold as a duo. Real flower petals and citrus pieces you can see. Perfect gift pairing.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R160</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Complete Set</div>
+                    <img src="pack1.jpg" alt="4-Product Care Collection">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Complete Care Set — 4 Products</div>
+                    <h3 class="product-name">Essential Care Collection</h3>
+                    <p class="product-description">Complete skincare set with face cream, body lotion, artisan soap, and spray cooling lotion. Everything you need for a premium experience.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R535</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="pack2.jpg" alt="Face Cream">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Facial Care</div>
+                    <h3 class="product-name">Neshehe Girls Face Cream</h3>
+                    <p class="product-description">Rich, nourishing face cream formulated with natural ingredients. Hydrates deeply and leaves skin soft, smooth, and glowing.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R180</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Best Value</div>
+                    <img src="pack4.jpg" alt="5-Product Care Collection">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Premium Care Set — 5 Products</div>
+                    <h3 class="product-name">Premium Care Collection</h3>
+                    <p class="product-description">Our most complete set: face cream, body lotion, artisan soap, spray cooling lotion, and exfoliating body scrub. The ultimate spa experience.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R670</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <img src="pack5.jpg" alt="Body Scrub">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Body Care</div>
+                    <h3 class="product-name">Exfoliating Body Scrub</h3>
+                    <p class="product-description">Natural body scrub that gently exfoliates and reveals smooth, refreshed skin. Packed with nourishing ingredients for a spa-quality treatment.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R170</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Luxury</div>
+                    <img src="pack6.jpg" alt="Ocean Mist Rose Soap">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Luxury Artisan Soap</div>
+                    <h3 class="product-name">Ocean Mist Rose Soap</h3>
+                    <p class="product-description">Hand-sculpted rose-shaped soap infused with ocean mist fragrance. A stunning decorative piece that's as beautiful as it is functional.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R120</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Luxury</div>
+                    <img src="pack7.jpg" alt="Red Rose Soap">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Luxury Artisan Soap</div>
+                    <h3 class="product-name">Red Rose Soap</h3>
+                    <p class="product-description">Exquisite red rose-shaped soap with real rose essence. Hand-crafted beauty that looks too elegant to use. The perfect romantic gift.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R120</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Luxury Collection</div>
+                    <img src="pack8.jpg" alt="Luxury Soap Collection">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Luxury Collection — 3 Exotic Soaps</div>
+                    <h3 class="product-name">Luxury Soap Collection</h3>
+                    <p class="product-description">A curated trio of hand-sculpted luxury rose soaps with 3 exotic flavors. Each piece is a work of art. Perfect for premium gifts.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R335</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Variety Pack</div>
+                    <img src="pack9.jpg" alt="Artisan Soap 4-Pack">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Artisan Bar Soap — Pack of 4</div>
+                    <h3 class="product-name">Artisan Soap Variety Pack</h3>
+                    <p class="product-description">A curated selection of 4 artisan bar soaps in various flavors. Real ingredients you can see and feel. Perfect for discovering your favorite.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R310</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Premium</div>
+                    <img src="pack10.jpg" alt="Coffee Infused Soap">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Artisan Bar Soap</div>
+                    <h3 class="product-name">Coffee Infused Creamy Soap</h3>
+                    <p class="product-description">Creamy artisan soap infused with real Arabica coffee beans. Natural exfoliation meets rich coffee aroma. Energizes your morning routine.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R105</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+            <div class="product-card fade-in">
+                <div class="product-image-wrapper">
+                    <div class="product-badge">Variety Pack</div>
+                    <img src="pack11.jpg" alt="Exotic Soap Pack">
+                </div>
+                <div class="product-info">
+                    <div class="product-category">Artisan Bar Soap — Single & Duo Pack</div>
+                    <h3 class="product-name">Exotic Artisan Soap Collection</h3>
+                    <p class="product-description">Single and twin pack artisan soaps in various exotic flavors. Real natural ingredients visible in every bar. Perfect variety for unique scents.</p>
+                    <div class="product-footer">
+                        <div><span class="product-price-label">From</span><div class="product-price">R120</div></div>
+                        <button class="add-cart">Add to Quote</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══ SAGE & STITCH TEASER ═══ -->
+    <section class="sage-teaser fade-in">
+        <div class="sage-teaser-inner">
+            <div class="sage-teaser-text">
+                <div class="sage-new-badge">✦ New Collection</div>
+                <div class="sage-teaser-label">Handcrafted Crochet &amp; Fashion</div>
+                <h2 class="sage-teaser-title">Introducing<br><em>Sage &amp; Stitch</em></h2>
+                <p class="sage-teaser-desc">Where earth meets craft. Our new crochet fashion collection is handmade with love — bohemian, free-spirited pieces that carry the same soul as our beauty range. Earthy tones, natural fibres, real artisan energy.</p>
+                <ul class="sage-feature-list">
+                    <li>Handcrafted crochet dresses &amp; co-ord sets</li>
+                    <li>Earthy terracottas, sage greens &amp; warm creams</li>
+                    <li>Artisan bags &amp; accessories</li>
+                    <li>Custom orders welcome</li>
+                </ul>
+                <a href="sage-stitch.html" class="btn-sage"><span>Explore Sage &amp; Stitch →</span></a>
+            </div>
+            <div class="sage-visual">
+                <div class="sage-visual-grid">
+                    <div class="sage-visual-card">
+                        <div class="sage-visual-img">
+                            <img src="crochet1.jpg" alt="Crochet Dress" onerror="this.parentElement.innerHTML='<div class=\'sage-placeholder\'><div class=\'sage-placeholder-icon\'>🧶</div><div class=\'sage-placeholder-text\'>Boho Dress</div></div>'">
+                        </div>
+                        <div class="sage-card-label"><div class="sage-card-label-cat">New In</div><div class="sage-card-label-name">Boho Dress</div></div>
+                    </div>
+                    <div class="sage-visual-card">
+                        <div class="sage-visual-img">
+                            <img src="crochet2.jpg" alt="Crochet Top" onerror="this.parentElement.innerHTML='<div class=\'sage-placeholder\'><div class=\'sage-placeholder-icon\'>🌿</div><div class=\'sage-placeholder-text\'>Crop Top</div></div>'">
+                        </div>
+                        <div class="sage-card-label"><div class="sage-card-label-cat">Bestseller</div><div class="sage-card-label-name">Crop Top</div></div>
+                    </div>
+                    <div class="sage-visual-card">
+                        <div class="sage-visual-img">
+                            <img src="crochet3.jpg" alt="Crochet Bag" onerror="this.parentElement.innerHTML='<div class=\'sage-placeholder\'><div class=\'sage-placeholder-icon\'>👜</div><div class=\'sage-placeholder-text\'>Artisan Bag</div></div>'">
+                        </div>
+                        <div class="sage-card-label"><div class="sage-card-label-cat">Accessories</div><div class="sage-card-label-name">Artisan Bag</div></div>
+                    </div>
+                    <div class="sage-visual-card">
+                        <div class="sage-visual-img">
+                            <img src="crochet4.jpg" alt="Crochet Co-ord" onerror="this.parentElement.innerHTML='<div class=\'sage-placeholder\'><div class=\'sage-placeholder-icon\'>✨</div><div class=\'sage-placeholder-text\'>Co-ord Set</div></div>'">
+                        </div>
+                        <div class="sage-card-label"><div class="sage-card-label-cat">Limited</div><div class="sage-card-label-name">Co-ord Set</div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="testimonials">
+        <div class="testimonials-wrapper">
+            <div class="section-header fade-in">
+                <div class="section-label">Client Testimonials</div>
+                <h2 class="section-title">Trusted by Industry Leaders</h2>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">Neshehe Girls has transformed our guest experience. The real lemon pieces and rose petals in the soaps are incredible. Our guests love the visible natural ingredients.</p>
+                <div class="testimonial-author">
+                    <div class="author-image">SC</div>
+                    <div class="author-details"><h4>Sophia Chen</h4><p>General Manager, The Maison Hotel</p></div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">We've partnered with Neshehe Girls for two years. The natural ingredients and visible fruit pieces set them apart. Our customers love the authenticity.</p>
+                <div class="testimonial-author">
+                    <div class="author-image">MR</div>
+                    <div class="author-details"><h4>Marcus Rodriguez</h4><p>Director, Lumière Restaurant Group</p></div>
+                </div>
+            </div>
+            <div class="testimonial-card fade-in">
+                <div class="quote-mark">"</div>
+                <p class="testimonial-text">The rose petal bath bombs are incredible! Watching the petals release into the water is pure magic. Neshehe Girls delivers natural luxury.</p>
+                <div class="testimonial-author">
+                    <div class="author-image">EH</div>
+                    <div class="author-details"><h4>Eleanor Harper</h4><p>Owner, The Garden House Inn</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta" id="contact">
+        <div class="cta-content">
+            <h2>Partner With Us</h2>
+            <p>Join South Africa's finest establishments. Request a quote and discover how Neshehe Girls can enhance your guest experience with real, natural beauty.</p>
+            <form class="cta-form" id="ctaForm">
+                <input type="email" class="cta-input" placeholder="your@business.com" required>
+                <button type="submit" class="cta-submit">Get Quote</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <h3>NESHEHE <span style="color:var(--pink)">GIRLS</span></h3>
+                <p>Premium natural beauty products handcrafted with real, visible ingredients. Serving South Africa's finest hotels, restaurants, and retailers.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Beauty</h4>
+                <ul>
+                    <li><a href="collection.html">Artisan Soaps</a></li>
+                    <li><a href="collection.html">Bath Bombs</a></li>
+                    <li><a href="collection.html">Body Care</a></li>
+                    <li><a href="collection.html">Hair Care</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>🧶 Sage &amp; Stitch</h4>
+                <ul>
+                    <li><a href="sage-stitch.html" class="sage-footer">Crochet Dresses</a></li>
+                    <li><a href="sage-stitch.html" class="sage-footer">Tops &amp; Sets</a></li>
+                    <li><a href="sage-stitch.html" class="sage-footer">Bags &amp; Accessories</a></li>
+                    <li><a href="sage-stitch.html" class="sage-footer">Custom Orders</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact</h4>
+                <ul>
+                    <li><a href="tel:0832993949">083 299 3949</a></li>
+                    <li><a href="/cdn-cgi/l/email-protection#90fcf5e3fcf5f5f4f1fce4fffed0f7fdf1f9fcbef3fffd"><span class="__cf_email__" data-cfemail="91fdf4e2fdf4f4f5f0fde5feffd1f6fcf0f8fdbff2fefc">[email&#160;protected]</span></a></li>
+                    <li><a href="https://whatsapp.com/channel/0029Vb7B9141Hspxsf9t9R3G" target="_blank">📢 Follow on WhatsApp</a></li>
+                    <li><a href="#">Request Quote</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>© 2026 Neshehe Girls Beauty Products. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- PAYMENT MODAL -->
+    <div class="payment-overlay" id="paymentOverlay" onclick="closePaymentEvent(event)">
+        <div class="payment-modal">
+            <button class="payment-close" onclick="closePayment()">✕</button>
+            <h2 class="payment-title">Secure Checkout</h2>
+            <p class="payment-subtitle">🔒 Powered by PayFast — 100% secure</p>
+            <div class="order-summary">
+                <h4>Order Summary</h4>
+                <div id="orderItems"></div>
+                <div class="order-total"><span>Total</span><span id="orderTotal">R0</span></div>
+            </div>
+            <div id="emptyCartMsg" class="empty-cart-msg" style="display:none">Your cart is empty — add some products first!</div>
+            <form id="payfastForm" action="https://www.payfast.co.za/eng/process" method="post" style="display:none">
+                <input type="hidden" name="merchant_id" value="13074377">
+                <input type="hidden" name="merchant_key" value="ax7861jmhczsf">
+                <input type="hidden" name="return_url" value="https://neshehe-girls.github.io/Beauty-products/">
+                <input type="hidden" name="cancel_url" value="https://neshehe-girls.github.io/Beauty-products/">
+                <input type="hidden" name="amount" id="pf_amount" value="0">
+                <input type="hidden" name="item_name" id="pf_item_name" value="Neshehe Girls Order">
+                <input type="hidden" name="item_description" id="pf_item_desc" value="">
+            </form>
+            <button class="pay-btn" id="payNowBtn" onclick="processPayment()">Pay Now — <span id="payTotal">R0</span></button>
+            <div class="secure-badge">🔒 SSL Encrypted · Visa · Mastercard · EFT · Instant EFT</div>
+        </div>
+    </div>
+    <div class="toast" id="toast"></div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        function getCart() {
+            try { return JSON.parse(localStorage.getItem('ng_cart') || '[]'); } catch(e) { return []; }
+        }
+        function saveCart(cart) {
+            localStorage.setItem('ng_cart', JSON.stringify(cart));
+        }
+        function updateCartUI() {
+            var cart = getCart();
+            var el = document.getElementById('cartCount');
+            if (el) el.textContent = cart.length;
+        }
+        function addToCart(name, price) {
+            var cart = getCart();
+            cart.push({ name: name, price: price });
+            saveCart(cart);
+            updateCartUI();
+            showToast('🛍️ ' + name + ' added to cart!');
+        }
+        function showToast(msg) {
+            var t = document.getElementById('toast');
+            if (!t) return;
+            t.textContent = msg;
+            t.classList.add('show');
+            setTimeout(function() { t.classList.remove('show'); }, 3000);
+        }
+        function openPayment() {
+            var cart = getCart();
+            var itemsEl = document.getElementById('orderItems');
+            var totalEl = document.getElementById('orderTotal');
+            var payTotalEl = document.getElementById('payTotal');
+            var emptyMsg = document.getElementById('emptyCartMsg');
+            var payBtn = document.getElementById('payNowBtn');
+            var total = 0;
+            if (cart.length === 0) {
+                itemsEl.innerHTML = '';
+                if (emptyMsg) emptyMsg.style.display = 'block';
+                if (payBtn) payBtn.style.display = 'none';
+                if (totalEl) totalEl.textContent = 'R0';
+                if (payTotalEl) payTotalEl.textContent = 'R0';
+            } else {
+                if (emptyMsg) emptyMsg.style.display = 'none';
+                if (payBtn) payBtn.style.display = 'block';
+                itemsEl.innerHTML = cart.map(function(item) {
+                    var num = parseInt((item.price || '').toString().replace(/[^0-9]/g, '')) || 0;
+                    total += num;
+                    return '<div class="order-item"><span>' + item.name + '</span><span>' + item.price + '</span></div>';
+                }).join('');
+                var totalStr = 'R' + total;
+                if (totalEl) totalEl.textContent = totalStr;
+                if (payTotalEl) payTotalEl.textContent = totalStr;
+                var pfAmount = document.getElementById('pf_amount');
+                var pfDesc = document.getElementById('pf_item_desc');
+                if (pfAmount) pfAmount.value = total.toFixed(2);
+                if (pfDesc) pfDesc.value = cart.map(function(i){ return i.name; }).join(', ');
+            }
+            document.getElementById('paymentOverlay').classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closePayment() {
+            document.getElementById('paymentOverlay').classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        function closePaymentEvent(event) {
+            if (event.target === document.getElementById('paymentOverlay')) closePayment();
+        }
+        function processPayment() {
+            var cart = getCart();
+            if (cart.length === 0) { showToast('Your cart is empty!'); return; }
+            var form = document.getElementById('payfastForm');
+            if (form) {
+                saveCart([]);
+                updateCartUI();
+                form.submit();
+            }
+        }
+        document.querySelectorAll('.add-cart').forEach(function(btn) {
+            btn.addEventListener('click', function() {
+                var card = this.closest('.product-card');
+                var name = card ? (card.querySelector('.product-name') || {}).textContent : 'Product';
+                var priceEl = card ? card.querySelector('.product-price') : null;
+                var price = priceEl ? priceEl.textContent.trim() : 'R0';
+                addToCart(name, price);
+                var orig = this.textContent;
+                this.textContent = 'Added ✓';
+                this.style.background = '#FF1493';
+                var self = this;
+                setTimeout(function() { self.textContent = orig; self.style.background = ''; }, 2000);
+            });
+        });
+        document.querySelectorAll('a[href^="#"]').forEach(function(a) {
+            a.addEventListener('click', function(e) {
+                e.preventDefault();
+                var t = document.querySelector(a.getAttribute('href'));
+                if (t) t.scrollIntoView({ behavior: 'smooth' });
+            });
+        });
+        var obs = new IntersectionObserver(function(entries) {
+            entries.forEach(function(entry, i) {
+                if (entry.isIntersecting) {
+                    setTimeout(function() { entry.target.classList.add('visible'); }, i * 100);
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.05, rootMargin: '0px 0px -50px 0px' });
+        document.querySelectorAll('.fade-in').forEach(function(el) { obs.observe(el); });
+        setTimeout(function() {
+            document.querySelectorAll('.fade-in:not(.visible)').forEach(function(el, i) {
+                var rect = el.getBoundingClientRect();
+                if (rect.top < window.innerHeight) {
+                    setTimeout(function() { el.classList.add('visible'); }, i * 100);
+                }
+            });
+        }, 150);
+        var ctaForm = document.getElementById('ctaForm');
+        if (ctaForm) {
+            ctaForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var btn = this.querySelector('.cta-submit');
+                var input = this.querySelector('.cta-input');
+                btn.textContent = 'Sending...';
+                setTimeout(function() {
+                    btn.textContent = 'Sent ✓';
+                    input.value = '';
+                    setTimeout(function() { btn.textContent = 'Get Quote'; }, 2000);
+                }, 1000);
+            });
+        }
+
+        // ─── INIT ─────────────────────────────────────────────────
+        updateCartUI();
+    </script>
+</body>
+</html>
